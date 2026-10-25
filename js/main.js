@@ -6,6 +6,10 @@
   var STORAGE_KEY = "vi-lang";
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var lang = "en";
+  // Language of this URL as built by tools/build.mjs: "/" is English, "/de/" German.
+  var PAGE_LANG = document.documentElement.getAttribute("lang") || "en";
+  // Site root, so image paths from the config also work on /de/.
+  var BASE = document.currentScript ? new URL("../", document.currentScript.src) : null;
 
   // ---------- helpers ----------
   function fill(str, vars) {
@@ -25,6 +29,10 @@
     return fill(s, vars);
   }
 
+  function asset(path) {
+    return BASE ? new URL(path, BASE).href : path;
+  }
+
   function $all(sel, root) {
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   }
@@ -39,6 +47,8 @@
 
   // ---------- language ----------
   function detectLang() {
+    // A language-specific URL (/de/) always shows its language.
+    if (PAGE_LANG !== "en" && DICT[PAGE_LANG]) return PAGE_LANG;
     var saved = storageGet();
     if (saved && DICT[saved]) return saved;
     var prefs = navigator.languages || [navigator.language || "en"];
@@ -96,7 +106,7 @@
     fig.textContent = "";
     if (src) {
       var img = document.createElement("img");
-      img.src = src;
+      img.src = asset(src);
       img.alt = label;
       img.loading = "lazy";
       img.decoding = "async";
@@ -143,8 +153,8 @@
 
       if (s.video) {
         var v = document.createElement("video");
-        v.src = s.video;
-        if (s.poster) v.poster = s.poster;
+        v.src = asset(s.video);
+        if (s.poster) v.poster = asset(s.poster);
         v.muted = true;
         v.loop = true;
         v.playsInline = true;
@@ -155,7 +165,7 @@
       } else {
         var before = document.createElement("img");
         before.className = "compare-img";
-        before.src = s.photo;
+        before.src = asset(s.photo);
         before.width = 800;
         before.height = 500;
         before.loading = i === 0 ? "eager" : "lazy";
@@ -163,7 +173,7 @@
 
         var after = document.createElement("img");
         after.className = "compare-img compare-after";
-        after.src = s.heatmap;
+        after.src = asset(s.heatmap);
         after.width = 800;
         after.height = 500;
         after.loading = i === 0 ? "eager" : "lazy";
@@ -441,11 +451,22 @@
   })();
 
   // ---------- language switch ----------
+  // Point the address bar at the matching language URL (/ or /de/) without a
+  // reload, so a copied link opens in the same language.
+  function showLangUrl(next) {
+    var alt = document.querySelector('link[rel="alternate"][hreflang="' + next + '"]');
+    if (!alt || !history.replaceState || !/^https?:$/.test(location.protocol)) return;
+    try {
+      history.replaceState(null, "", new URL(alt.href).pathname + location.hash);
+    } catch (e) { /* ignore */ }
+  }
+
   $all("[data-lang]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var next = btn.getAttribute("data-lang");
       storageSet(next);
       applyLang(next);
+      showLangUrl(next);
     });
   });
 

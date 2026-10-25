@@ -5,8 +5,8 @@
  */
 window.I18N = {
   en: {
-    "meta.title": "{product}: visual inspection trained on good parts only",
-    "meta.description": "{product} finds defects on parts and missed steps in manual assembly. Trained on good parts only, running on your own hardware, fully offline.",
+    "meta.title": "AI Visual Inspection & Assembly Monitoring | {product}",
+    "meta.description": "On-premise AI visual inspection software. Finds defects on parts, PCBs and packaging, and skipped steps in manual assembly. Trained on good parts only.",
     "skip": "Skip to content",
     "nav.label": "Main navigation",
     "nav.menu": "Menu",
@@ -19,7 +19,7 @@ window.I18N = {
     "lang.label": "Language",
 
     "hero.title": "Catch defects and skipped steps.",
-    "hero.title2": "Trained on good parts only. Running on your own hardware.",
+    "hero.title2": "AI visual inspection trained on good parts only, running on your own hardware.",
     "hero.sub": "{product} learns what a good part and a correct work cycle look like, and flags anything that differs. You don’t collect defect images. You don’t tune models. Nothing has to leave your plant.",
     "hero.cta1": "Request a demo",
     "hero.cta2": "See how it works",
@@ -117,6 +117,17 @@ window.I18N = {
     "easy.f5.t": "Teach from results",
     "easy.f5.d": "“This was actually OK”, and the model takes it into account.",
 
+    "use.title": "Where it’s used",
+    "use.lead": "If a good part looks the same every time, {product} can learn it. If a job follows the same steps every time, it can check them.",
+    "use.pcb.t": "Electronics and PCB assembly",
+    "use.pcb.d": "Missing, extra or bent components, flux residue and contamination on boards. Also as an extra check next to existing AOI.",
+    "use.parts.t": "Metal, plastic and molded parts",
+    "use.parts.d": "Scratches, contamination and anything else that differs from a good part.",
+    "use.pack.t": "Packaging and labelling",
+    "use.pack.d": "Smudged or missing labels and print, missing contents, damaged packs.",
+    "use.assembly.t": "Manual assembly and packing stations",
+    "use.assembly.d": "Skipped steps, wrong order and cycle times, checked live on camera at the bench.",
+
     "int.title": "Fits into your line",
     "int.lead": "Send results to your PLC, MES or signal lamps. Set rules such as “on FAIL, pulse PLC coil”.",
     "int.webhook.t": "Webhook",
@@ -186,6 +197,8 @@ window.I18N = {
     "faq.a7": "Yes. The user interface is available in English and German.",
     "faq.q8": "What does it cost?",
     "faq.a8": "Pricing is on request. Licenses are signed files with the feature modules you need.",
+    "faq.q9": "Which industries is it for?",
+    "faq.a9": "Any manufacturer or packaging company that checks parts or work steps by eye: electronics and PCB assembly, metal and plastic parts, packaging and labelling, and manual assembly. It is available worldwide.",
 
     "contact.title": "Let’s look at your parts",
     "contact.lead": "Tell us what you want to inspect. If you can, attach a few photos or a short video to the email. We’ll get back to you to arrange a demo.",
@@ -217,8 +230,8 @@ window.I18N = {
   },
 
   de: {
-    "meta.title": "{product}: Optische Prüfung, angelernt nur mit Gutteilen",
-    "meta.description": "{product} findet Fehler an Bauteilen und ausgelassene Schritte in der manuellen Montage. Angelernt nur mit Gutteilen, auf Ihrer eigenen Hardware, komplett offline.",
+    "meta.title": "KI-Sichtprüfung & Montageüberwachung | {product}",
+    "meta.description": "KI-Sichtprüfung auf Ihrer eigenen Hardware: findet Fehler an Bauteilen, Leiterplatten und Verpackungen sowie ausgelassene Montageschritte. Nur mit Gutteilen angelernt.",
     "skip": "Zum Inhalt springen",
     "nav.label": "Hauptnavigation",
     "nav.menu": "Menü",
@@ -231,7 +244,7 @@ window.I18N = {
     "lang.label": "Sprache",
 
     "hero.title": "Fehler und ausgelassene Schritte erkennen.",
-    "hero.title2": "Angelernt nur mit Gutteilen. Auf Ihrer eigenen Hardware.",
+    "hero.title2": "KI-Sichtprüfung, angelernt nur mit Gutteilen, auf Ihrer eigenen Hardware.",
     "hero.sub": "{product} lernt, wie ein gutes Teil und ein korrekter Arbeitszyklus aussehen, und meldet alles, was abweicht. Sie sammeln keine Fehlerbilder. Sie stellen keine Modelle ein. Nichts muss Ihr Werk verlassen.",
     "hero.cta1": "Demo anfragen",
     "hero.cta2": "So funktioniert es",
@@ -329,6 +342,17 @@ window.I18N = {
     "easy.f5.t": "Aus Ergebnissen lernen",
     "easy.f5.d": "„War doch in Ordnung“, und das Modell berücksichtigt es.",
 
+    "use.title": "Wo es eingesetzt wird",
+    "use.lead": "Wenn ein gutes Teil jedes Mal gleich aussieht, kann {product} es lernen. Wenn ein Arbeitsgang jedes Mal denselben Schritten folgt, kann es sie prüfen.",
+    "use.pcb.t": "Elektronik- und Leiterplattenfertigung",
+    "use.pcb.d": "Fehlende, zusätzliche oder verbogene Bauteile, Flussmittelreste und Verschmutzungen auf Leiterplatten. Auch als zusätzliche Prüfung neben einer vorhandenen AOI.",
+    "use.parts.t": "Metall-, Kunststoff- und Spritzgussteile",
+    "use.parts.d": "Kratzer, Verschmutzungen und alles andere, was von einem Gutteil abweicht.",
+    "use.pack.t": "Verpackung und Etikettierung",
+    "use.pack.d": "Verwischte oder fehlende Etiketten und Aufdrucke, fehlender Inhalt, beschädigte Verpackungen.",
+    "use.assembly.t": "Manuelle Montage- und Packplätze",
+    "use.assembly.d": "Ausgelassene Schritte, falsche Reihenfolge und Zykluszeiten, live per Kamera am Arbeitsplatz geprüft.",
+
     "int.title": "Passt in Ihre Linie",
     "int.lead": "Ergebnisse an SPS, MES oder Signalleuchten senden. Mit Regeln wie „Bei FAIL: SPS-Spule pulsen“.",
     "int.webhook.t": "Webhook",
@@ -398,6 +422,8 @@ window.I18N = {
     "faq.a7": "Ja. Die Benutzeroberfläche ist auf Deutsch und Englisch verfügbar.",
     "faq.q8": "Was kostet es?",
     "faq.a8": "Preise auf Anfrage. Lizenzen sind signierte Dateien mit den Funktionsmodulen, die Sie benötigen.",
+    "faq.q9": "Für welche Branchen ist es geeignet?",
+    "faq.a9": "Für alle Hersteller und Verpackungsbetriebe, die Teile oder Arbeitsschritte per Sichtprüfung kontrollieren: Elektronik- und Leiterplattenfertigung, Metall- und Kunststoffteile, Verpackung und Etikettierung sowie manuelle Montage. Weltweit verfügbar.",
 
     "contact.title": "Schauen wir uns Ihre Teile an",
     "contact.lead": "Beschreiben Sie kurz, was Sie prüfen möchten. Wenn möglich, hängen Sie ein paar Fotos oder ein kurzes Video an die E-Mail an. Wir melden uns, um eine Demo zu vereinbaren.",

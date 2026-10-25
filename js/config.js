@@ -7,6 +7,10 @@ window.SITE_CONFIG = {
   contactEmail: "contact@visioninspect.de",
   company: "VisionInspect",
   address: "Netaji Palli, Belonia, Tripura, India",
+  // Used by tools/build.mjs for canonical links, hreflang, the sitemap and
+  // structured data (schema.org) for search engines.
+  siteUrl: "https://visioninspect.de/",
+  postalAddress: { street: "Netaji Palli", locality: "Belonia", region: "Tripura", country: "IN" },
 
   /*
    * Screenshots. null = show a labelled placeholder box.
