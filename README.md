@@ -1,4 +1,4 @@
-# VisionInspect website
+﻿# VisionInspect website
 
 Static marketing page for VisionInspect, in English and German. It is plain HTML, CSS and vanilla JavaScript, with no build step, no framework and no external requests (no CDNs, fonts, analytics or cookies).
 
@@ -9,8 +9,8 @@ Live at **https://visioninspect.de** (GitHub Pages).
 Any static file server works. From this folder:
 
 ```bash
-python -m http.server 8000
-# open http://localhost:8000
+python -m http.server 4173 --bind 127.0.0.1
+# open http://localhost:4173
 ```
 
 Opening `index.html` directly from disk also works in most browsers.
@@ -21,8 +21,8 @@ Opening `index.html` directly from disk also works in most browsers.
 |---|---|
 | Product name, contact email, company, address | `js/config.js` (`SITE_CONFIG`) |
 | All page text (EN + DE) | `js/i18n.js`. Keep the same keys in both dictionaries. `{product}` and `{email}` are filled in from the config. |
-| Screenshots | Put files in `img/screenshots/` and set the paths in `SITE_CONFIG.screenshots` in `js/config.js`. `null` shows a labelled placeholder. |
-| "What it flags" carousel | `SITE_CONFIG.showcase` in `js/config.js`. Each slide has a `photo` and a `heatmap` image (same size, ideally 16:10). Set `example: false` to hide the "Example image" badge. Video slides are supported: `{ key, video, poster }`. |
+| Screenshots | Put files in `img/screenshots/` and set the paths in `SITE_CONFIG.screenshots` in `js/config.js` (one per step of each module; the screenshot changes when a step is clicked). `null` shows a labelled placeholder. |
+| "What it flags" carousel (in the hero) | `SITE_CONFIG.showcase` in `js/config.js`. Each slide has a `photo` and a `heatmap` image (same size, ideally 16:10). Set `example: false` to hide the "Example image" badge. Video slides are supported: `{ key, video, poster }`. |
 | Colors, spacing | Tokens at the top of `css/styles.css` (`--accent` is the single blue) |
 | Imprint / privacy policy | `imprint.html`, `privacy.html`. **TODO: the legal text is still missing.** |
 | Domain | `CNAME` (used by GitHub Pages) and the canonical link in `index.html` |
@@ -40,7 +40,7 @@ The page opens in German if the visitor's browser prefers German, otherwise in E
 ### GitHub Pages (current setup)
 
 1. Push to the `main` branch of the GitHub repository.
-2. In the repository, open **Settings → Pages**. Under **Source**, choose *Deploy from a branch*, then `main` and `/ (root)`.
+2. In the repository, open **Settings â†’ Pages**. Under **Source**, choose *Deploy from a branch*, then `main` and `/ (root)`.
 3. **Custom domain:** `visioninspect.de` (already in the `CNAME` file).
 4. At your domain registrar, set these DNS records for `visioninspect.de`:
 
@@ -57,8 +57,8 @@ The page opens in German if the visitor's browser prefers German, otherwise in E
    | CNAME | www | `<github-username>.github.io` |
 
    Remove any old A, AAAA or CNAME records for `@` and `www` (for example the registrar's parking page).
-5. Once DNS has propagated (minutes to a few hours), go back to **Settings → Pages** and enable **Enforce HTTPS**.
-6. Recommended: verify the domain under **GitHub → Settings → Pages → Verified domains**, so no one else can claim it for their Pages site.
+5. Once DNS has propagated (minutes to a few hours), go back to **Settings â†’ Pages** and enable **Enforce HTTPS**.
+6. Recommended: verify the domain under **GitHub â†’ Settings â†’ Pages â†’ Verified domains**, so no one else can claim it for their Pages site.
 
 ### Netlify / any static host
 
@@ -79,7 +79,7 @@ server {
 ```
 index.html          single landing page
 imprint.html        TODO: Impressum
-privacy.html        TODO: Datenschutzerklärung
+privacy.html        TODO: DatenschutzerklÃ¤rung
 css/styles.css
 js/config.js        name, email, screenshots, showcase images
 js/i18n.js          EN + DE text

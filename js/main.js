@@ -89,30 +89,35 @@
   }
 
   // ---------- screenshots / placeholders ----------
+  function renderShot(fig) {
+    var name = fig.getAttribute("data-shot");
+    var src = CONFIG.screenshots[name];
+    var label = t("shot." + name);
+    fig.textContent = "";
+    if (src) {
+      var img = document.createElement("img");
+      img.src = src;
+      img.alt = label;
+      img.loading = "lazy";
+      img.decoding = "async";
+      fig.appendChild(img);
+      fig.classList.remove("shot-placeholder");
+      fig.removeAttribute("role");
+      fig.removeAttribute("aria-label");
+    } else {
+      var text = "[" + t("shot.placeholder") + ": " + label + "]";
+      fig.classList.add("shot-placeholder");
+      fig.setAttribute("role", "img");
+      fig.setAttribute("aria-label", text);
+      var span = document.createElement("span");
+      span.setAttribute("aria-hidden", "true");
+      span.textContent = text;
+      fig.appendChild(span);
+    }
+  }
+
   function renderShots() {
-    $all("[data-shot]").forEach(function (fig) {
-      var name = fig.getAttribute("data-shot");
-      var src = CONFIG.screenshots[name];
-      var label = t("shot." + name);
-      fig.textContent = "";
-      if (src) {
-        var img = document.createElement("img");
-        img.src = src;
-        img.alt = label;
-        img.loading = name === "hero" ? "eager" : "lazy";
-        img.decoding = "async";
-        fig.appendChild(img);
-        fig.classList.remove("shot-placeholder");
-      } else {
-        fig.classList.add("shot-placeholder");
-        fig.setAttribute("role", "img");
-        fig.setAttribute("aria-label", "[" + t("shot.placeholder") + ": " + label + "]");
-        var span = document.createElement("span");
-        span.setAttribute("aria-hidden", "true");
-        span.textContent = "[" + t("shot.placeholder") + ": " + label + "]";
-        fig.appendChild(span);
-      }
-    });
+    $all("[data-shot]").forEach(renderShot);
   }
 
   // ---------- carousel with photo / heat-map compare ----------
@@ -279,6 +284,96 @@
 
     go(0, false);
     return api;
+  })();
+
+  // ---------- module tabs ----------
+  var selectTab = (function () {
+    var tabs = $all('[role="tab"]');
+    var section = document.getElementById("modules");
+
+    function select(name, focus) {
+      tabs.forEach(function (tab) {
+        var active = tab.getAttribute("data-tab") === name;
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+        document.getElementById(tab.getAttribute("aria-controls")).hidden = !active;
+        if (active && focus) tab.focus();
+      });
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab.getAttribute("data-tab"), false); });
+      tab.addEventListener("keydown", function (e) {
+        var step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (e.key === "Home") step = -i;
+        if (e.key === "End") step = tabs.length - 1 - i;
+        if (step === undefined) return;
+        e.preventDefault();
+        select(tabs[(i + step + tabs.length) % tabs.length].getAttribute("data-tab"), true);
+      });
+    });
+
+    // Nav links "Inspection" / "Process" open the matching tab.
+    function openFromLink(name) {
+      select(name, false);
+      section.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+      if (history.replaceState) history.replaceState(null, "", "#" + name);
+    }
+    $all("[data-tab-link]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        openFromLink(a.getAttribute("data-tab-link"));
+      });
+    });
+    var hash = location.hash.slice(1);
+    if (hash === "inspection" || hash === "process") {
+      select(hash, false);
+      setTimeout(function () { section.scrollIntoView(); }, 0);
+    }
+
+    return select;
+  })();
+
+  // ---------- step lists: clicking a step swaps the screenshot ----------
+  $all("[data-stepper]").forEach(function (list) {
+    var buttons = $all(".step-btn", list);
+    var fig = list.parentNode.querySelector("[data-shot]");
+    function activate(btn) {
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+      fig.setAttribute("data-shot", btn.getAttribute("data-step"));
+      renderShot(fig);
+    }
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", function () { activate(b); });
+    });
+    activate(buttons[0]);
+  });
+
+  // ---------- gentle fade-in of sections while scrolling ----------
+  (function () {
+    var items = $all("[data-reveal]");
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      items.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+
+  // ---------- header border once the page is scrolled ----------
+  (function () {
+    var header = document.querySelector(".site-header");
+    function update() { header.classList.toggle("is-scrolled", window.scrollY > 8); }
+    window.addEventListener("scroll", update, { passive: true });
+    update();
   })();
 
   // ---------- mobile nav ----------

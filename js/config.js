@@ -11,11 +11,12 @@ window.SITE_CONFIG = {
   /*
    * Screenshots. null = show a labelled placeholder box.
    * To use a real screenshot, put the file in img/screenshots/ and set the path,
-   * e.g. hero: "img/screenshots/results-compare.png".
+   * e.g. m1s4: "img/screenshots/results-compare.png".
+   * One screenshot per step in the "Two modules" section (m1 = Industrial
+   * Inspection, m2 = Process Inspection). It changes when a step is clicked.
    * The alt text comes from the dictionaries (keys "shot.<name>").
    */
   screenshots: {
-    hero: null,
     m1s1: null,
     m1s2: null,
     m1s3: null,
@@ -23,9 +24,7 @@ window.SITE_CONFIG = {
     m2s1: null,
     m2s2: null,
     m2s3: null,
-    m2s4: null,
-    m1feature: null,
-    m2feature: null
+    m2s4: null
   },
 
   /*
