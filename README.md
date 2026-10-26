@@ -45,7 +45,7 @@ What it writes into each page's `<head>`, between `<!-- seo:start -->` and `<!--
 | Screenshots | Put files in `img/screenshots/` and set the paths in `SITE_CONFIG.screenshots` in `js/config.js` (one per step of each module; the screenshot changes when a step is clicked). `null` shows a labelled placeholder. |
 | "What it flags" carousel (in the hero) | `SITE_CONFIG.showcase` in `js/config.js`. Each slide has a `photo` and a `heatmap` image (same size, ideally 16:10). Set `example: false` to hide the "Example image" badge. Video slides are supported: `{ key, video, poster }`. |
 | Colors, spacing | Tokens at the top of `css/styles.css` (`--accent` is the single accent colour, the teal from the logo) |
-| Imprint / privacy policy | `imprint.html`, `privacy.html`. **TODO: add the postal code and a phone number to the imprint, and have both pages reviewed.** |
+| Imprint / privacy policy | `imprint.html`, `privacy.html`. **TODO: add the postal code to the imprint, and have both pages reviewed.** |
 | Domain | `CNAME` (used by GitHub Pages) and the canonical link in `index.html` |
 
 The images in `img/showcase/` are drawn placeholder illustrations, not real inspection results. Replace them with real captures as soon as you have them.
