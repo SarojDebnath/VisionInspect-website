@@ -89,6 +89,9 @@
     $all("[data-config]").forEach(function (el) {
       el.textContent = CONFIG[el.getAttribute("data-config")];
     });
+    $all("[data-config-href]").forEach(function (a) {
+      a.href = CONFIG[a.getAttribute("data-config-href")];
+    });
     $all("[data-config-mail]").forEach(function (a) {
       a.href = "mailto:" + CONFIG.contactEmail;
       a.textContent = CONFIG.contactEmail;
@@ -143,7 +146,7 @@
     var index = 0;
 
     slides.forEach(function (s, i) {
-      var li = document.createElement("li");
+      var li = document.createElement("div");
       li.className = "slide";
       li.setAttribute("role", "group");
       li.setAttribute("aria-roledescription", "slide");

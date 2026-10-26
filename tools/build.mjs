@@ -79,6 +79,7 @@ function headBlock(lang) {
     url: SITE,
     logo: SITE + "img/logo-512.png",
     email: CONFIG.contactEmail,
+    sameAs: [CONFIG.linkedin].filter(Boolean),
     address: {
       "@type": "PostalAddress",
       streetAddress: a.street,
@@ -145,6 +146,7 @@ function headBlock(lang) {
     `<meta property="og:locale" content="${LOCALE[lang]}">`,
     ...other.map((l) => `<meta property="og:locale:alternate" content="${LOCALE[l]}">`),
     `<meta name="twitter:card" content="summary_large_image">`,
+    ...(CONFIG.showcase[0]?.photo ? [`<link rel="preload" as="image" href="${CONFIG.showcase[0].photo}">`] : []),
     `<script type="application/ld+json">`,
     json,
     `</script>`,
@@ -162,6 +164,7 @@ function render(template, lang) {
   html = fillText(html, "data-config", (key) => String(CONFIG[key]));
   html = fillText(html, "data-config-mail", () => CONFIG.contactEmail);
   html = fillText(html, "data-year", () => YEAR);
+  html = html.replace(/<a\b[^>]*\sdata-config-href="([^"]*)"[^>]*>/g, (tag, key) => setAttr(tag, "href", CONFIG[key]));
   html = html.replace(/<a\b[^>]*\sdata-config-mail\b[^>]*>/g, (tag) => setAttr(tag, "href", "mailto:" + CONFIG.contactEmail));
   html = html.replace(/<[a-z]+\b[^>]*\sdata-i18n-attr="([^"]*)"[^>]*>/g, (tag, spec) => {
     for (const pair of spec.split(";")) {
@@ -176,7 +179,7 @@ function render(template, lang) {
   const depth = PAGE_PATH[lang].split("/").filter(Boolean).length;
   if (depth) {
     const up = "../".repeat(depth);
-    html = html.replace(/\b(href|src)="(?!https?:|mailto:|#|\/|\.\.\/)([^"]+)"/g, `$1="${up}$2"`);
+    html = html.replace(/(\s)(href|src)="(?!https?:|mailto:|#|\/|\.\.\/)([^"]+)"/g, `$1$2="${up}$3"`);
   }
   return html;
 }

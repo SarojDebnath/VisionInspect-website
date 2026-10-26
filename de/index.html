@@ -23,6 +23,7 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="../img/showcase/01-missing-photo.svg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,6 +35,9 @@
         "url": "https://visioninspect.de/",
         "logo": "https://visioninspect.de/img/logo-512.png",
         "email": "contact@visioninspect.de",
+        "sameAs": [
+          "https://www.linkedin.com/company/visioninspect"
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Netaji Palli",
@@ -101,7 +105,7 @@
             "name": "Wie viele Gutteile brauche ich?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Das hängt davon ab, wie stark Ihre Gutteile variieren. Beginnen Sie mit einer Reihe von Gutteilen und nutzen Sie dann den Testschritt. Werden gute Teile markiert, fügen Sie sie als Gutteile hinzu oder markieren Sie sie als „war doch in Ordnung“."
+              "text": "Das hängt davon ab, wie stark Ihre Gutteile (i.O.-Teile) variieren. Beginnen Sie mit einer Reihe von Gutteilen und nutzen Sie dann den Testschritt. Werden gute Teile markiert, fügen Sie sie als Gutteile hinzu oder markieren Sie sie als „war doch in Ordnung“."
             }
           },
           {
@@ -114,10 +118,10 @@
           },
           {
             "@type": "Question",
-            "name": "Brauche ich eine GPU?",
+            "name": "Welche Hardware brauche ich?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nein. Die Software läuft auf einer normalen CPU. Mit GPU geht das Erstellen von Modellen und das Prüfen schneller."
+              "text": "Einen PC mit NVIDIA-Grafikkarte. Wir entwickeln und testen auf einem Laptop mit Intel Core Ultra 7, 64 GB RAM und einer NVIDIA-RTX-GPU mit 4 GB Grafikspeicher. Mehr Grafikspeicher wird empfohlen."
             }
           },
           {
@@ -157,7 +161,7 @@
             "name": "Was kostet es?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Preise auf Anfrage. Lizenzen sind signierte Dateien mit den Funktionsmodulen, die Sie benötigen."
+              "text": "Preise auf Anfrage. Sie können VisionInspect vor dem Kauf eine Woche lang mit Ihren eigenen Teilen testen. Lizenzen sind signierte Dateien mit den Funktionsmodulen, die Sie benötigen."
             }
           },
           {
@@ -183,7 +187,7 @@
   <!-- Icon sprite -->
   <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
     <defs>
-      <symbol id="i-logo" viewBox="0 0 32 32"><rect x="2" y="2" width="28" height="28" rx="7" fill="currentColor"/><path d="M8 16 a8 8 0 0 1 16 0 a8 8 0 0 1 -16 0z" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="16" cy="16" r="3.2" fill="#fff"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 700 700"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#0b2545" stroke-width="32" d="M56 202V128a72 72 0 0 1 72-72h72M500 56h72a72 72 0 0 1 72 72v74M56 498v74a72 72 0 0 0 72 72h72M500 644h72a72 72 0 0 0 72-72v-74M156 362l194 93 194-93M156 448l194 93 194-93"/><path fill="#0f766e" stroke="#0f766e" stroke-width="14" d="M350 154l199 96-199 103-199-103z"/><path stroke="#fff" stroke-width="28" d="M310 254l30 31 60-67"/></g></symbol>
       <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
       <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
       <symbol id="i-align" viewBox="0 0 24 24"><rect x="4" y="4" width="10" height="10" rx="1"/><rect x="10" y="10" width="10" height="10" rx="1" stroke-dasharray="2.5 2"/></symbol>
@@ -247,8 +251,8 @@
       </nav>
 
       <div class="lang-switch" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Sprache">
-        <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
-        <button type="button" data-lang="de" lang="de" aria-label="Deutsch" aria-pressed="true">DE</button>
+        <button type="button" data-lang="en" lang="en" aria-label="EN, English" aria-pressed="false">EN</button>
+        <button type="button" data-lang="de" lang="de" aria-label="DE, Deutsch" aria-pressed="true">DE</button>
       </div>
 
       <a class="btn btn-primary btn-sm header-cta" href="#contact" data-i18n="hero.cta1">Demo anfragen</a>
@@ -274,7 +278,7 @@
             <span data-i18n="hero.title">Fehler und ausgelassene Schritte erkennen.</span>
             <span class="h1-sub" data-i18n="hero.title2">KI-Sichtprüfung, angelernt nur mit Gutteilen, auf Ihrer eigenen Hardware.</span>
           </h1>
-          <p class="lead" data-i18n="hero.sub">VisionInspect lernt, wie ein gutes Teil und ein korrekter Arbeitszyklus aussehen, und meldet alles, was abweicht. Sie sammeln keine Fehlerbilder. Sie stellen keine Modelle ein. Nichts muss Ihr Werk verlassen.</p>
+          <p class="lead" data-i18n="hero.sub">VisionInspect lernt, wie ein gutes Teil und ein korrekter Arbeitszyklus aussehen, und meldet alles, was abweicht. KI-Anomalieerkennung für die Qualitätsprüfung: Sie sammeln keine Fehlerbilder, Sie stellen keine Modelle ein, und nichts muss Ihr Werk verlassen.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Demo anfragen</a>
             <a class="btn btn-link" href="#modules"><span data-i18n="hero.cta2">So funktioniert es</span> <span aria-hidden="true">&rarr;</span></a>
@@ -284,7 +288,7 @@
         <div class="carousel" data-carousel aria-roledescription="carousel" aria-labelledby="show-title">
           <p class="carousel-label" id="show-title" data-i18n="show.title">Was erkannt wird</p>
           <div class="carousel-viewport">
-            <ul class="carousel-track" data-track></ul>
+            <div class="carousel-track" data-track></div>
           </div>
           <div class="carousel-controls">
             <button type="button" class="icon-btn" data-prev data-i18n-attr="aria-label:show.prev" aria-label="Vorheriges Beispiel">
@@ -304,7 +308,7 @@
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.f1">Keine Fehlerbilder nötig</span></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.f2">Läuft komplett offline</span></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.f3">SPS-Anbindung über Modbus TCP</span></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.f4">Oberfläche auf Deutsch und Englisch</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="hero.f4">1 Woche Test mit Ihren eigenen Teilen</span></li>
         </ul>
       </div>
     </section>
@@ -317,10 +321,10 @@
           <p class="lead" data-i18n="use.lead">Wenn ein gutes Teil jedes Mal gleich aussieht, kann VisionInspect es lernen. Wenn ein Arbeitsgang jedes Mal denselben Schritten folgt, kann es sie prüfen.</p>
         </header>
         <ul class="tiles tiles-4">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><h3 data-i18n="use.pcb.t">Elektronik- und Leiterplattenfertigung</h3><p data-i18n="use.pcb.d">Fehlende, zusätzliche oder verbogene Bauteile, Flussmittelreste und Verschmutzungen auf Leiterplatten. Auch als zusätzliche Prüfung neben einer vorhandenen AOI.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 data-i18n="use.parts.t">Metall-, Kunststoff- und Spritzgussteile</h3><p data-i18n="use.parts.d">Kratzer, Verschmutzungen und alles andere, was von einem Gutteil abweicht.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><h3 data-i18n="use.pack.t">Verpackung und Etikettierung</h3><p data-i18n="use.pack.d">Verwischte oder fehlende Etiketten und Aufdrucke, fehlender Inhalt, beschädigte Verpackungen.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3 data-i18n="use.assembly.t">Manuelle Montage- und Packplätze</h3><p data-i18n="use.assembly.d">Ausgelassene Schritte, falsche Reihenfolge und Zykluszeiten, live per Kamera am Arbeitsplatz geprüft.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><h3 data-i18n="use.pcb.t">Elektronik- und Leiterplattenfertigung</h3><p data-i18n="use.pcb.d">Fehlende, zusätzliche oder verbogene Bauteile, Lötfehler, Flussmittelreste und Verschmutzungen. Auch als zweite Prüfung nach der AOI, mit den AOI-Bildern oder einer eigenen Kamera.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 data-i18n="use.parts.t">Oberflächenprüfung an jedem Material</h3><p data-i18n="use.parts.d">Kratzer, Dellen, Verschmutzungen und andere Oberflächenfehler an Metall-, Kunststoff-, Glas- oder lackierten Teilen.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><h3 data-i18n="use.pack.t">Verpackung und Etikettierung</h3><p data-i18n="use.pack.d">Prüft, ob jedes Teil in der Verpackung oder im Karton ist, und meldet Verpackungen, die anders aussehen als eine gute.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3 data-i18n="use.assembly.t">Werkerassistenz an Montage- und Packplätzen</h3><p data-i18n="use.assembly.d">Ausgelassene Schritte, falsche Reihenfolge und Zykluszeiten, live per Kamera am Arbeitsplatz geprüft. Getestet mit Zyklen von 5 Minuten, längere sind möglich.</p></li>
         </ul>
       </div>
     </section>
@@ -344,7 +348,7 @@
         </div>
 
         <div class="panel" role="tabpanel" id="inspection" aria-labelledby="tab-inspection" tabindex="0">
-          <p class="panel-lead" data-i18n="m1.lead">Sie wissen, wie ein gutes Teil aussieht. Zeigen Sie der Software Gutteile, und sie meldet jedes Teil, das nicht dazu passt.</p>
+          <p class="panel-lead" data-i18n="m1.lead">Sie wissen, wie ein i.O.-Teil aussieht. Zeigen Sie der Software Gutteile, und die Fehlererkennung meldet jedes Teil, das nicht dazu passt, ganz ohne Fehlerbilder.</p>
           <div class="panel-grid">
             <ol class="stepper" data-stepper>
               <li><button type="button" class="step-btn" data-step="m1s1"><span class="step-num">01</span><span class="step-body"><span class="step-title" data-i18n="how.m1s1.t">Gutteile zeigen</span><span class="step-desc" data-i18n="how.m1s1.d">Nehmen Sie ein Referenzbild auf, markieren Sie den Prüfbereich und fügen Sie Bilder von Gutteilen hinzu. Schlechtteile sind optional.</span></span></button></li>
@@ -366,7 +370,7 @@
         </div>
 
         <div class="panel" role="tabpanel" id="process" aria-labelledby="tab-process" tabindex="0" hidden>
-          <p class="panel-lead" data-i18n="m2.lead">Am Ende einer langen Schicht wird ein Schritt ausgelassen. Sie erfahren es direkt am Arbeitsplatz, nicht durch eine Reklamation.</p>
+          <p class="panel-lead" data-i18n="m2.lead">Am Ende einer langen Schicht wird ein Schritt ausgelassen. Die Prozessüberwachung per Kamera erkennt es direkt am Arbeitsplatz, nicht erst durch eine Reklamation.</p>
           <div class="panel-grid">
             <ol class="stepper" data-stepper>
               <li><button type="button" class="step-btn" data-step="m2s1"><span class="step-num">01</span><span class="step-body"><span class="step-title" data-i18n="how.m2s1.t">Einen korrekten Zyklus aufnehmen</span><span class="step-desc" data-i18n="how.m2s1.d">Laden Sie ein Video hoch, in dem der Arbeitsgang korrekt ausgeführt wird.</span></span></button></li>
@@ -392,7 +396,7 @@
       <div class="container easy-grid" data-reveal>
         <header>
           <h2 id="easy-title" data-i18n="easy.title">Kein KI-Fachwissen nötig</h2>
-          <p class="lead" data-i18n="easy.lead">Gemacht für die Menschen, die die Linie betreiben, nicht für Data Scientists.</p>
+          <p class="lead" data-i18n="easy.lead">Gemacht für die Menschen, die die Linie betreiben, nicht für Data Scientists. Kein Fachwissen in Bildverarbeitung oder Deep Learning nötig.</p>
         </header>
         <ul class="strip">
           <li><svg class="icon" aria-hidden="true"><use href="#i-wizard"/></svg><strong data-i18n="easy.f1.t">Geführter Assistent</strong><span data-i18n="easy.f1.d">Vom ersten Bild bis zur Live-Prüfung, Schritt für Schritt.</span></li>
@@ -427,7 +431,7 @@
       <div class="container" data-reveal>
         <header class="section-head">
           <h2 id="data-title" data-i18n="data.title">Ihre Daten, Ihre Kontrolle</h2>
-          <p class="lead" data-i18n="data.lead">VisionInspect läuft auf Ihrem PC oder Server und funktioniert komplett offline. Cloud-KI schalten Sie bei Bedarf ein, Sie müssen sie nicht erst abschalten.</p>
+          <p class="lead" data-i18n="data.lead">VisionInspect läuft On-Premise auf Ihrem PC oder Server und funktioniert komplett offline. Cloud-KI schalten Sie bei Bedarf ein, Sie müssen sie nicht erst abschalten.</p>
         </header>
         <div class="data-grid">
           <div>
@@ -471,14 +475,14 @@
           <h2 id="faq-title" data-i18n="faq.title">Häufige Fragen</h2>
         </header>
         <div class="faq">
-          <details><summary data-i18n="faq.q1">Wie viele Gutteile brauche ich?</summary><p data-i18n="faq.a1">Das hängt davon ab, wie stark Ihre Gutteile variieren. Beginnen Sie mit einer Reihe von Gutteilen und nutzen Sie dann den Testschritt. Werden gute Teile markiert, fügen Sie sie als Gutteile hinzu oder markieren Sie sie als „war doch in Ordnung“.</p></details>
+          <details><summary data-i18n="faq.q1">Wie viele Gutteile brauche ich?</summary><p data-i18n="faq.a1">Das hängt davon ab, wie stark Ihre Gutteile (i.O.-Teile) variieren. Beginnen Sie mit einer Reihe von Gutteilen und nutzen Sie dann den Testschritt. Werden gute Teile markiert, fügen Sie sie als Gutteile hinzu oder markieren Sie sie als „war doch in Ordnung“.</p></details>
           <details><summary data-i18n="faq.q2">Brauche ich Bilder von Fehlern?</summary><p data-i18n="faq.a2">Nein. Das Modell lernt nur aus Gutteilen. Sie können Schlechtteile hinzufügen, um Ihre Gut/Schlecht-Grenze zu überprüfen, müssen es aber nicht.</p></details>
-          <details><summary data-i18n="faq.q3">Brauche ich eine GPU?</summary><p data-i18n="faq.a3">Nein. Die Software läuft auf einer normalen CPU. Mit GPU geht das Erstellen von Modellen und das Prüfen schneller.</p></details>
+          <details><summary data-i18n="faq.q3">Welche Hardware brauche ich?</summary><p data-i18n="faq.a3">Einen PC mit NVIDIA-Grafikkarte. Wir entwickeln und testen auf einem Laptop mit Intel Core Ultra 7, 64 GB RAM und einer NVIDIA-RTX-GPU mit 4 GB Grafikspeicher. Mehr Grafikspeicher wird empfohlen.</p></details>
           <details><summary data-i18n="faq.q4">Verlassen Daten mein Netzwerk?</summary><p data-i18n="faq.a4">Standardmäßig nicht. Alles läuft lokal und funktioniert offline. Nur wenn Sie die optionale KI-Prüfung einschalten, werden Bilder von Schlechtteilen oder abgeschlossenen Schritten an Ihr konfiguriertes KI-Konto gesendet.</p></details>
           <details><summary data-i18n="faq.q5">Welche Kameras kann ich nutzen?</summary><p data-i18n="faq.a5">IP-Kameras über RTSP, USB-Kameras, eine Webcam im Browser oder jedes Gerät, das Bilder in einem von VisionInspect überwachten Ordner ablegt.</p></details>
           <details><summary data-i18n="faq.q6">Kann es mit meiner SPS kommunizieren?</summary><p data-i18n="faq.a6">Ja, über Modbus TCP. Außerdem stehen MQTT, signierte Webhooks und ein GPIO-Edge-Agent für Leuchten und Relais zur Verfügung.</p></details>
           <details><summary data-i18n="faq.q7">Gibt es die Software auf Deutsch?</summary><p data-i18n="faq.a7">Ja. Die Benutzeroberfläche ist auf Deutsch und Englisch verfügbar.</p></details>
-          <details><summary data-i18n="faq.q8">Was kostet es?</summary><p data-i18n="faq.a8">Preise auf Anfrage. Lizenzen sind signierte Dateien mit den Funktionsmodulen, die Sie benötigen.</p></details>
+          <details><summary data-i18n="faq.q8">Was kostet es?</summary><p data-i18n="faq.a8">Preise auf Anfrage. Sie können VisionInspect vor dem Kauf eine Woche lang mit Ihren eigenen Teilen testen. Lizenzen sind signierte Dateien mit den Funktionsmodulen, die Sie benötigen.</p></details>
           <details><summary data-i18n="faq.q9">Für welche Branchen ist es geeignet?</summary><p data-i18n="faq.a9">Für alle Hersteller und Verpackungsbetriebe, die Teile oder Arbeitsschritte per Sichtprüfung kontrollieren: Elektronik- und Leiterplattenfertigung, Metall- und Kunststoffteile, Verpackung und Etikettierung sowie manuelle Montage. Weltweit verfügbar.</p></details>
         </div>
       </div>
@@ -489,7 +493,7 @@
       <div class="container split" data-reveal>
         <header class="split-head">
           <h2 id="contact-title" data-i18n="contact.title">Schauen wir uns Ihre Teile an</h2>
-          <p class="lead" data-i18n="contact.lead">Beschreiben Sie kurz, was Sie prüfen möchten. Wenn möglich, hängen Sie ein paar Fotos oder ein kurzes Video an die E-Mail an. Wir melden uns, um eine Demo zu vereinbaren.</p>
+          <p class="lead" data-i18n="contact.lead">Beschreiben Sie kurz, was Sie prüfen möchten. Wenn möglich, hängen Sie ein paar Fotos oder ein kurzes Video an die E-Mail an. Wir melden uns, um eine Demo oder einen einwöchigen Test mit Ihren eigenen Teilen zu vereinbaren.</p>
           <p class="contact-direct">
             <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
             <span><span data-i18n="form.direct">Oder schreiben Sie uns direkt:</span><br><a data-config-mail href="mailto:contact@visioninspect.de">contact@visioninspect.de</a></span>
@@ -551,6 +555,7 @@
         <li><a href="../imprint.html" data-i18n="footer.imprint">Impressum</a></li>
         <li><a href="../privacy.html" data-i18n="footer.privacy">Datenschutzerklärung</a></li>
         <li><a data-config-mail href="mailto:contact@visioninspect.de">contact@visioninspect.de</a></li>
+        <li><a data-config-href="linkedin" href="https://www.linkedin.com/company/visioninspect" rel="me noopener" data-i18n="footer.linkedin">VisionInspect auf LinkedIn</a></li>
       </ul>
     </div>
   </footer>

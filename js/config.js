@@ -10,6 +10,7 @@ window.SITE_CONFIG = {
   // Used by tools/build.mjs for canonical links, hreflang, the sitemap and
   // structured data (schema.org) for search engines.
   siteUrl: "https://visioninspect.de/",
+  linkedin: "https://www.linkedin.com/company/visioninspect",
   postalAddress: { street: "Netaji Palli", locality: "Belonia", region: "Tripura", country: "IN" },
 
   /*
