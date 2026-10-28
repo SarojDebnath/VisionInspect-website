@@ -305,6 +305,8 @@ main:focus { outline: none; }
 .carousel-track { display: flex; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
 .slide { flex: 0 0 100%; min-width: 0; }
 .slide-caption { margin: .9rem 0 0; font-weight: 600; color: var(--ink); min-height: 3.2em; }
+.slide-credit { margin: 0; font-size: .8rem; color: var(--muted); }
+.slide-credit a { color: inherit; }
 .carousel-controls { display: flex; align-items: center; gap: 12px; }
 .carousel-dots { display: flex; flex-wrap: wrap; gap: 0; margin-right: auto; }
 .dot {

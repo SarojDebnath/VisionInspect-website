@@ -222,6 +222,18 @@
 
       li.appendChild(frame);
       li.appendChild(cap);
+
+      if (s.credit) {
+        var credit = document.createElement("p");
+        credit.className = "slide-credit";
+        var creditLink = document.createElement("a");
+        creditLink.href = s.credit.url;
+        creditLink.rel = "noopener";
+        creditLink.textContent = s.credit.text;
+        credit.appendChild(document.createElement("span"));
+        credit.appendChild(creditLink);
+        li.appendChild(credit);
+      }
       track.appendChild(li);
 
       var dot = document.createElement("button");
@@ -263,15 +275,18 @@
         el.querySelector(".slide-caption").textContent = t("show." + s.key);
         var r = el.querySelector(".compare-range");
         if (r) r.setAttribute("aria-label", t("show.compare") + ": " + t("show." + s.key));
+        var labels = s.labels || ["photo", "heatmap"];
         var imgs = el.querySelectorAll(".compare-img");
         if (imgs.length) {
-          imgs[0].alt = t("show.photo") + ": " + t("show." + s.key);
-          imgs[1].alt = t("show.heatmap") + ": " + t("show." + s.key);
+          imgs[0].alt = t("show." + labels[0]) + ": " + t("show." + s.key);
+          imgs[1].alt = t("show." + labels[1]) + ": " + t("show." + s.key);
         }
         var tl = el.querySelector(".compare-tag-l");
-        if (tl) tl.textContent = t("show.photo");
+        if (tl) tl.textContent = t("show." + labels[0]);
         var tr = el.querySelector(".compare-tag-r");
-        if (tr) tr.textContent = t("show.heatmap");
+        if (tr) tr.textContent = t("show." + labels[1]);
+        var cr = el.querySelector(".slide-credit span");
+        if (cr) cr.textContent = t("show.credit") + ": ";
         var b = el.querySelector(".example-badge");
         if (b) b.textContent = t("show.example");
       });
