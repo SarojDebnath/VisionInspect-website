@@ -23,6 +23,7 @@ The page text lives in `js/i18n.js`, but it is also written into the HTML so tha
 |---|---|
 | https://visioninspect.de/ (English, default) | `index.html` |
 | https://visioninspect.de/de/ (German) | `de/index.html` |
+| Solution pages, e.g. https://visioninspect.de/pcb-inspection/ and https://visioninspect.de/de/leiterplatten-pruefung/ | `<url>/index.html`, written from `tools/pages.mjs` |
 
 After editing `js/i18n.js`, `js/config.js` or `index.html`, run (Node.js 18 or newer, no packages needed):
 
@@ -40,6 +41,7 @@ What it writes into each page's `<head>`, between `<!-- seo:start -->` and `<!--
 |---|---|
 | Product name, contact email, company, address, site URL, LinkedIn page | `js/config.js` (`SITE_CONFIG`) |
 | Logo | `img/logo.svg` (also used as `img/favicon.svg` and, inline, as the `i-logo` symbol in `index.html`). Brand colours: navy `#0b2545`, teal `#0f766e`. |
+| Solution pages (PCB inspection, assembly monitoring, inspection without defect images): text, titles, FAQs | `tools/pages.mjs`; URLs in `SITE_CONFIG.pages` in `js/config.js`. Then run `node tools/build.mjs`. Only write what the product really does. |
 | All page text (EN + DE), including the search title and description (`meta.title`, `meta.description`) | `js/i18n.js`. Keep the same keys in both dictionaries. `{product}` and `{email}` are filled in from the config. Then run `node tools/build.mjs`. |
 | Link preview image, logo for search engines | `img/og-image.png` (1200×630), `img/logo-512.png` |
 | Screenshots | Put files in `img/screenshots/` and set the paths in `SITE_CONFIG.screenshots` in `js/config.js` (one per step of each module; the screenshot changes when a step is clicked). `null` shows a labelled placeholder. |

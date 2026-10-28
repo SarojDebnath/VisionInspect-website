@@ -13,6 +13,15 @@ window.SITE_CONFIG = {
   linkedin: "https://www.linkedin.com/company/visioninspect",
   postalAddress: { street: "Netaji Palli", locality: "Belonia", region: "Tripura", country: "IN" },
 
+  // Solution pages: URL per language (from the site root). Their text is in
+  // tools/pages.mjs; tools/build.mjs writes them. Links on the home page carry
+  // data-page="<key>" and point to the page in the current language.
+  pages: {
+    pcb: { en: "pcb-inspection/", de: "de/leiterplatten-pruefung/" },
+    assembly: { en: "assembly-monitoring/", de: "de/montageueberwachung/" },
+    anomaly: { en: "visual-inspection-without-defect-images/", de: "de/sichtpruefung-ohne-fehlerbilder/" }
+  },
+
   /*
    * Screenshots. null = show a labelled placeholder box.
    * To use a real screenshot, put the file in img/screenshots/ and set the path,

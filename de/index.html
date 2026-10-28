@@ -71,6 +71,7 @@
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://visioninspect.de/#software",
         "name": "VisionInspect",
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "KI-Sichtprüfung",
@@ -321,10 +322,10 @@
           <p class="lead" data-i18n="use.lead">Wenn ein gutes Teil jedes Mal gleich aussieht, kann VisionInspect es lernen. Wenn ein Arbeitsgang jedes Mal denselben Schritten folgt, kann es sie prüfen.</p>
         </header>
         <ul class="tiles tiles-4">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><h3 data-i18n="use.pcb.t">Elektronik- und Leiterplattenfertigung</h3><p data-i18n="use.pcb.d">Fehlende, zusätzliche oder verbogene Bauteile, Lötfehler, Flussmittelreste und Verschmutzungen. Auch als zweite Prüfung nach der AOI, mit den AOI-Bildern oder einer eigenen Kamera.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 data-i18n="use.parts.t">Oberflächenprüfung an jedem Material</h3><p data-i18n="use.parts.d">Kratzer, Dellen, Verschmutzungen und andere Oberflächenfehler an Metall-, Kunststoff-, Glas- oder lackierten Teilen.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><h3 data-i18n="use.pcb.t">Elektronik- und Leiterplattenfertigung</h3><p data-i18n="use.pcb.d">Fehlende, zusätzliche oder verbogene Bauteile, Lötfehler, Flussmittelreste und Verschmutzungen. Auch als zweite Prüfung nach der AOI, mit den AOI-Bildern oder einer eigenen Kamera.</p><a class="tile-link" href="/de/leiterplatten-pruefung/" data-page="pcb" data-i18n="use.pcb.more">Mehr zur Leiterplattenprüfung</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 data-i18n="use.parts.t">Oberflächenprüfung an jedem Material</h3><p data-i18n="use.parts.d">Kratzer, Dellen, Verschmutzungen und andere Oberflächenfehler an Metall-, Kunststoff-, Glas- oder lackierten Teilen.</p><a class="tile-link" href="/de/sichtpruefung-ohne-fehlerbilder/" data-page="anomaly" data-i18n="use.parts.more">So funktioniert die Prüfung ohne Fehlerbilder</a></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><h3 data-i18n="use.pack.t">Verpackung und Etikettierung</h3><p data-i18n="use.pack.d">Prüft, ob jedes Teil in der Verpackung oder im Karton ist, und meldet Verpackungen, die anders aussehen als eine gute.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3 data-i18n="use.assembly.t">Werkerassistenz an Montage- und Packplätzen</h3><p data-i18n="use.assembly.d">Ausgelassene Schritte, falsche Reihenfolge und Zykluszeiten, live per Kamera am Arbeitsplatz geprüft. Getestet mit Zyklen von 5 Minuten, längere sind möglich.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3 data-i18n="use.assembly.t">Werkerassistenz an Montage- und Packplätzen</h3><p data-i18n="use.assembly.d">Ausgelassene Schritte, falsche Reihenfolge und Zykluszeiten, live per Kamera am Arbeitsplatz geprüft. Getestet mit Zyklen von 5 Minuten, längere sind möglich.</p><a class="tile-link" href="/de/montageueberwachung/" data-page="assembly" data-i18n="use.assembly.more">Mehr zur Montageüberwachung</a></li>
         </ul>
       </div>
     </section>
@@ -552,6 +553,9 @@
         <p class="muted" data-i18n="footer.note">Diese Website verwendet keine Cookies, Tracker oder externen Dienste. Ihre Sprachauswahl wird nur in Ihrem Browser gespeichert.</p>
       </div>
       <ul class="footer-links">
+        <li><a href="/de/leiterplatten-pruefung/" data-page="pcb" data-i18n="footer.pcb">Leiterplattenprüfung</a></li>
+        <li><a href="/de/montageueberwachung/" data-page="assembly" data-i18n="footer.assembly">Montageüberwachung</a></li>
+        <li><a href="/de/sichtpruefung-ohne-fehlerbilder/" data-page="anomaly" data-i18n="footer.anomaly">Sichtprüfung ohne Fehlerbilder</a></li>
         <li><a href="../imprint.html" data-i18n="footer.imprint">Impressum</a></li>
         <li><a href="../privacy.html" data-i18n="footer.privacy">Datenschutzerklärung</a></li>
         <li><a data-config-mail href="mailto:contact@visioninspect.de">contact@visioninspect.de</a></li>

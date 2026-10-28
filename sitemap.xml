@@ -14,4 +14,46 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/"/>
   </url>
+  <url>
+    <loc>https://visioninspect.de/pcb-inspection/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visioninspect.de/pcb-inspection/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/leiterplatten-pruefung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/pcb-inspection/"/>
+  </url>
+  <url>
+    <loc>https://visioninspect.de/de/leiterplatten-pruefung/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visioninspect.de/pcb-inspection/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/leiterplatten-pruefung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/pcb-inspection/"/>
+  </url>
+  <url>
+    <loc>https://visioninspect.de/assembly-monitoring/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visioninspect.de/assembly-monitoring/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/montageueberwachung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/assembly-monitoring/"/>
+  </url>
+  <url>
+    <loc>https://visioninspect.de/de/montageueberwachung/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visioninspect.de/assembly-monitoring/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/montageueberwachung/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/assembly-monitoring/"/>
+  </url>
+  <url>
+    <loc>https://visioninspect.de/visual-inspection-without-defect-images/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visioninspect.de/visual-inspection-without-defect-images/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/sichtpruefung-ohne-fehlerbilder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/visual-inspection-without-defect-images/"/>
+  </url>
+  <url>
+    <loc>https://visioninspect.de/de/sichtpruefung-ohne-fehlerbilder/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://visioninspect.de/visual-inspection-without-defect-images/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://visioninspect.de/de/sichtpruefung-ohne-fehlerbilder/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://visioninspect.de/visual-inspection-without-defect-images/"/>
+  </url>
 </urlset>

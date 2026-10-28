@@ -79,6 +79,9 @@
     $all("[data-lang]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", String(btn.getAttribute("data-lang") === lang));
     });
+    $all("[data-page]").forEach(function (a) {
+      a.href = "/" + CONFIG.pages[a.getAttribute("data-page")][lang];
+    });
 
     renderShots();
     carousel.relabel();

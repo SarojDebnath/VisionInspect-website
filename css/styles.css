@@ -211,7 +211,7 @@ main:focus { outline: none; }
   background: var(--bg-alt);
   border: 1px solid var(--line);
 }
-.lang-switch button {
+.lang-switch button, .lang-switch a {
   min-width: 40px;
   min-height: 34px;
   border: 0;
@@ -223,7 +223,9 @@ main:focus { outline: none; }
   font-weight: 700;
   cursor: pointer;
 }
-.lang-switch button[aria-pressed="true"] { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(16, 24, 40, .12); }
+.lang-switch a { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.lang-switch a:hover { color: var(--ink); }
+.lang-switch button[aria-pressed="true"], .lang-switch a[aria-current="true"] { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(16, 24, 40, .12); }
 
 @media (min-width: 600px) {
   .header-cta { display: inline-flex; }
@@ -584,6 +586,10 @@ main:focus { outline: none; }
 .tiles .icon { width: 28px; height: 28px; color: var(--accent); margin-bottom: 1rem; }
 .tiles h3 { margin-bottom: .25rem; }
 .tiles p { margin: 0; color: var(--muted); font-size: .95rem; }
+.tile-link { display: inline-block; margin-top: .75rem; font-size: .95rem; font-weight: 600; }
+.tiles-related h3 a { color: var(--ink); text-decoration: none; }
+.tiles-related h3 a::after { content: " \2192"; color: var(--accent); }
+.tiles-related li:hover h3 a { color: var(--accent); }
 
 @media (min-width: 600px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .tiles { grid-template-columns: repeat(3, 1fr); } .tiles li { padding: 32px; } }
@@ -752,3 +758,48 @@ input:focus-visible, textarea:focus-visible { outline: none; border-color: var(-
 
 /* "Where it's used": four tiles in one row on desktop */
 @media (min-width: 1000px) { .tiles-4 { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- solution pages (pcb-inspection/ etc., written by tools/build.mjs) ---------- */
+.site-nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.page-hero { padding-bottom: 0; }
+.page-hero h1 { max-width: 20ch; font-size: clamp(2.1rem, 4.6vw, 3.4rem); }
+.page-hero .lead { max-width: 68ch; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .25rem; margin-bottom: 1.5rem; font-size: .9rem; color: var(--muted); }
+.breadcrumbs li + li::before { content: "/"; margin-right: .25rem; color: var(--line-strong); }
+.breadcrumbs a { color: var(--muted); }
+.breadcrumbs a:hover { color: var(--accent); }
+
+.prose { max-width: 70ch; }
+.prose p { color: var(--text); }
+.prose p:last-child { margin-bottom: 0; }
+
+.page-steps { display: grid; gap: 0 48px; border-top: 1px solid var(--line); }
+.page-steps li { display: flex; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+.page-steps .step-num { color: var(--accent); }
+.page-steps h3 { margin-bottom: .25rem; }
+.page-steps p { margin: 0; color: var(--muted); }
+@media (min-width: 800px) { .page-steps { grid-template-columns: repeat(2, 1fr); } }
+
+.page-cols { display: grid; gap: 32px 64px; }
+@media (min-width: 800px) { .page-cols { grid-template-columns: repeat(2, 1fr); } }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); }
+.compare-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: .95rem; }
+.compare-table th, .compare-table td { padding: .9rem 1rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.compare-table tbody tr:last-child > * { border-bottom: 0; }
+.compare-table thead th { color: var(--ink); font-weight: 650; background: var(--bg-alt); }
+.compare-table tbody th { color: var(--ink); font-weight: 600; }
+.compare-table td { color: var(--muted); }
+.compare-table th:last-child, .compare-table td:last-child { background: var(--accent-soft); color: var(--ink); }
+
+.example-figure { margin: 0; }
+.example-pair { display: grid; gap: 16px; }
+@media (min-width: 700px) { .example-pair { grid-template-columns: repeat(2, 1fr); } }
+.example-img { position: relative; overflow: hidden; border-radius: var(--radius); background: #2a2e33; }
+.example-img img { width: 100%; height: auto; }
+.example-figure figcaption { margin-top: .9rem; color: var(--ink); font-weight: 600; max-width: 75ch; }
+.example-figure .slide-credit { display: block; margin-top: .25rem; font-weight: 400; }
+
+.page-cta h2 { max-width: 24ch; }
+.page-cta .cta-row { gap: 16px 32px; }
+.page-cta .contact-direct { margin: 0; }

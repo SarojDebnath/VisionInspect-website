@@ -71,6 +71,7 @@
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://visioninspect.de/#software",
         "name": "VisionInspect",
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "AI visual inspection",
@@ -321,10 +322,10 @@
           <p class="lead" data-i18n="use.lead">If a good part looks the same every time, VisionInspect can learn it. If a job follows the same steps every time, it can check them.</p>
         </header>
         <ul class="tiles tiles-4">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><h3 data-i18n="use.pcb.t">Electronics and PCB assembly</h3><p data-i18n="use.pcb.d">Missing, extra or bent components, solder defects, flux residue and contamination. Also as a second check after AOI, using the AOI images or its own camera.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 data-i18n="use.parts.t">Surface defects on any material</h3><p data-i18n="use.parts.d">Scratches, dents, contamination and other surface defects on metal, plastic, glass or painted parts.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg><h3 data-i18n="use.pcb.t">Electronics and PCB assembly</h3><p data-i18n="use.pcb.d">Missing, extra or bent components, solder defects, flux residue and contamination. Also as a second check after AOI, using the AOI images or its own camera.</p><a class="tile-link" href="/pcb-inspection/" data-page="pcb" data-i18n="use.pcb.more">More about PCB inspection</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><h3 data-i18n="use.parts.t">Surface defects on any material</h3><p data-i18n="use.parts.d">Scratches, dents, contamination and other surface defects on metal, plastic, glass or painted parts.</p><a class="tile-link" href="/visual-inspection-without-defect-images/" data-page="anomaly" data-i18n="use.parts.more">How inspection without defect images works</a></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><h3 data-i18n="use.pack.t">Packaging and labelling</h3><p data-i18n="use.pack.d">Checks that every item is in the pack or box, and flags packs that look different from a good one.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3 data-i18n="use.assembly.t">Manual assembly and packing stations</h3><p data-i18n="use.assembly.d">Skipped steps, wrong order and cycle times, checked live on camera at the bench. Tested with 5-minute cycles; longer ones are possible.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg><h3 data-i18n="use.assembly.t">Manual assembly and packing stations</h3><p data-i18n="use.assembly.d">Skipped steps, wrong order and cycle times, checked live on camera at the bench. Tested with 5-minute cycles; longer ones are possible.</p><a class="tile-link" href="/assembly-monitoring/" data-page="assembly" data-i18n="use.assembly.more">More about assembly monitoring</a></li>
         </ul>
       </div>
     </section>
@@ -552,6 +553,9 @@
         <p class="muted" data-i18n="footer.note">This website uses no cookies, trackers or external services. Your language choice is saved in your browser only.</p>
       </div>
       <ul class="footer-links">
+        <li><a href="/pcb-inspection/" data-page="pcb" data-i18n="footer.pcb">PCB inspection</a></li>
+        <li><a href="/assembly-monitoring/" data-page="assembly" data-i18n="footer.assembly">Assembly monitoring</a></li>
+        <li><a href="/visual-inspection-without-defect-images/" data-page="anomaly" data-i18n="footer.anomaly">Inspection without defect images</a></li>
         <li><a href="imprint.html" data-i18n="footer.imprint">Imprint</a></li>
         <li><a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a></li>
         <li><a data-config-mail href="mailto:contact@visioninspect.de">contact@visioninspect.de</a></li>
