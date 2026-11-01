@@ -289,35 +289,47 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="s4">
+    <section class="section section-tight">
       <div class="container">
-        <header class="section-head"><h2 id="s4">How it works</h2></header>
-        <ol class="page-steps"><li><span class="step-num">01</span><div><h3>Show it good boards</h3><p>Take a reference photo, mark the area to inspect and add photos of good boards. Images of defects are optional.</p></div></li><li><span class="step-num">02</span><div><h3>Build the model</h3><p>One click. Every photo is aligned to the reference automatically, and the model learns what a good board looks like.</p></div></li><li><span class="step-num">03</span><div><h3>Test and set the limit</h3><p>Run test images, check the heat maps and set one pass/fail limit.</p></div></li><li><span class="step-num">04</span><div><h3>Inspect live or in batch</h3><p>Connect a camera or a folder. Every board gets a heat map, a score and PASS or FAIL, shown next to the closest good board.</p></div></li></ol>
+        <figure class="example-figure">
+          <div class="example-pair">
+            <div class="example-img"><img src="/img/showcase/01-missing-hole-photo.webp" alt="Photo of the board" width="896" height="560" loading="lazy" decoding="async"><span class="compare-tag compare-tag-l">Photo</span></div>
+            <div class="example-img"><img src="/img/showcase/01-missing-hole-heatmap.webp" alt="Heat map from VisionInspect" width="896" height="560" loading="lazy" decoding="async"><span class="compare-tag compare-tag-l">Heat map</span></div>
+          </div>
+          <figcaption>A bare PCB with three missing drill holes. All three are marked, and the board fails. <span class="slide-credit">Image: <a href="https://robotics.pkusz.edu.cn/resources/datasetENG/" rel="noopener">PKU-Market-PCB dataset (Peking University)</a></span></figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section section-alt" aria-labelledby="s5">
       <div class="container">
-        <header class="section-head"><h2 id="s5">A second check after AOI</h2></header>
-        <div class="prose"><p>If you already run automated optical inspection (AOI), VisionInspect can look at the boards a second time, using the images your AOI system saves or its own camera. Point it at the folder your AOI writes to, and every new image is inspected as it arrives.</p></div>
+        <header class="section-head"><h2 id="s5">How it works</h2></header>
+        <ol class="page-steps"><li><span class="step-num">01</span><div><h3>Show it good boards</h3><p>Take a reference photo, mark the area to inspect and add photos of good boards. Images of defects are optional.</p></div></li><li><span class="step-num">02</span><div><h3>Build the model</h3><p>One click. Every photo is aligned to the reference automatically, and the model learns what a good board looks like.</p></div></li><li><span class="step-num">03</span><div><h3>Test and set the limit</h3><p>Run test images, check the heat maps and set one pass/fail limit.</p></div></li><li><span class="step-num">04</span><div><h3>Inspect live or in batch</h3><p>Connect a camera or a folder. Every board gets a heat map, a score and PASS or FAIL, shown next to the closest good board.</p></div></li></ol>
       </div>
     </section>
 
     <section class="section" aria-labelledby="s6">
       <div class="container">
-        <header class="section-head"><h2 id="s6">Fits into your line</h2></header>
-        <ul class="tiles"><li><h3>Modbus TCP</h3><p>Talk to your PLC directly, for example pulse a coil on FAIL.</p></li><li><h3>MQTT</h3><p>Publish every result to your broker.</p></li><li><h3>Webhooks</h3><p>Signed HTTP calls to your MES or other systems.</p></li><li><h3>GPIO edge agent</h3><p>Switch lamps and relays, for example on a Raspberry Pi.</p></li><li><h3>CSV / ZIP export</h3><p>Results, cycle logs and images for your records.</p></li><li><h3>Any camera</h3><p>IP cameras via RTSP, USB cameras, a webcam, or a watched folder.</p></li></ul>
+        <header class="section-head"><h2 id="s6">A second check after AOI</h2></header>
+        <div class="prose"><p>If you already run automated optical inspection (AOI), VisionInspect can look at the boards a second time, using the images your AOI system saves or its own camera. Point it at the folder your AOI writes to, and every new image is inspected as it arrives.</p></div>
       </div>
     </section>
 
     <section class="section section-alt" aria-labelledby="s7">
       <div class="container">
-        <header class="section-head"><h2 id="s7">Your boards stay in your plant</h2></header>
+        <header class="section-head"><h2 id="s7">Fits into your line</h2></header>
+        <ul class="tiles"><li><h3>Modbus TCP</h3><p>Talk to your PLC directly, for example pulse a coil on FAIL.</p></li><li><h3>MQTT</h3><p>Publish every result to your broker.</p></li><li><h3>Webhooks</h3><p>Signed HTTP calls to your MES or other systems.</p></li><li><h3>GPIO edge agent</h3><p>Switch lamps and relays, for example on a Raspberry Pi.</p></li><li><h3>CSV / ZIP export</h3><p>Results, cycle logs and images for your records.</p></li><li><h3>Any camera</h3><p>IP cameras via RTSP, USB cameras, a webcam, or a watched folder.</p></li></ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s8">
+      <div class="container">
+        <header class="section-head"><h2 id="s8">Your boards stay in your plant</h2></header>
         <div class="prose"><p>VisionInspect runs on a PC or server in your own network and works fully offline; air-gapped installations are supported. Nothing leaves your network unless you switch on the optional AI second opinion.</p><p>You need a PC with an NVIDIA GPU. We develop and test on a laptop with an NVIDIA RTX GPU with 4 GB of GPU memory; more GPU memory is recommended.</p></div>
       </div>
     </section>
 
-    <section class="section" id="faq" aria-labelledby="faq-title">
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
       <div class="container split">
         <header class="split-head"><h2 id="faq-title">Questions</h2></header>
         <div class="faq">
@@ -330,7 +342,7 @@
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="related-title">
+    <section class="section" aria-labelledby="related-title">
       <div class="container">
         <header class="section-head"><h2 id="related-title">More applications</h2></header>
         <ul class="tiles tiles-related">
@@ -340,7 +352,7 @@
       </div>
     </section>
 
-    <section class="section page-cta" aria-labelledby="cta-title">
+    <section class="section page-cta section-alt" aria-labelledby="cta-title">
       <div class="container">
         <h2 id="cta-title">Test it on your own boards</h2>
         <p class="lead">Send us a few photos of good boards, and of defects if you have them. We’ll get back to you to arrange a demo or a 1-week trial on your own parts.</p>

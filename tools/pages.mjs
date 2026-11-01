@@ -11,7 +11,8 @@
  *   { h2, lead?, steps: [[title, text], ...] }      numbered steps
  *   { h2, lead?, cols: [{ h3, items: [...] }, ...] } two lists side by side
  *   { h2, lead?, table: { head: [...], rows: [[...], ...] } }
- *   { figure: true }                                the bent-pin example
+ *   { figure: "bent" }                              a real result from the carousel
+ *                                                   (SITE_CONFIG.showcase key, caption in ui.figCaptions)
  */
 
 const ui = {
@@ -22,7 +23,10 @@ const ui = {
     related: "More applications",
     figPhoto: "Photo of the board",
     figHeat: "Heat map from VisionInspect",
-    figCaption: "A bent pin on a sensor board, found by a model trained on a single good board. The heat map marks where the board differs from the good one.",
+    figCaptions: {
+      bent: "A bent pin on a sensor board, found by a model trained on a single good board. The heat map marks where the board differs from the good one.",
+      missing: "A bare PCB with three missing drill holes. All three are marked, and the board fails.",
+    },
     credit: "Image",
     learnMore: "Learn more",
     navPcb: "PCB inspection",
@@ -36,7 +40,10 @@ const ui = {
     related: "Weitere Anwendungen",
     figPhoto: "Foto der Platine",
     figHeat: "Heatmap von VisionInspect",
-    figCaption: "Ein verbogener Pin auf einer Sensorplatine, gefunden von einem Modell, das mit nur einer Gutplatine angelernt wurde. Die Heatmap zeigt, wo die Platine von der guten abweicht.",
+    figCaptions: {
+      bent: "Ein verbogener Pin auf einer Sensorplatine, gefunden von einem Modell, das mit nur einer Gutplatine angelernt wurde. Die Heatmap zeigt, wo die Platine von der guten abweicht.",
+      missing: "Eine unbestückte Leiterplatte mit drei fehlenden Bohrungen. Alle drei sind markiert, und die Platine ist n.i.O.",
+    },
     credit: "Bild",
     learnMore: "Mehr erfahren",
     navPcb: "Leiterplattenprüfung",
@@ -77,7 +84,7 @@ const pages = [
       facts: ["No defect images needed", "Second check after AOI", "Runs offline on your own PC", "PLC connection via Modbus TCP"],
       teaser: "Missing, extra and bent components, solder defects and contamination on PCBs, trained on good boards only.",
       sections: [
-        { figure: true },
+        { figure: "bent" },
         {
           h2: "Why PCB inspection is hard to automate",
           paras: [
@@ -96,6 +103,7 @@ const pages = [
             ["Print errors", "Smudged or missing labels and markings."],
           ],
         },
+        { figure: "missing" },
         {
           h2: "How it works",
           steps: [
@@ -142,7 +150,7 @@ const pages = [
       facts: ["Keine Fehlerbilder nötig", "Zweite Prüfung nach der AOI", "Läuft offline auf Ihrem eigenen PC", "SPS-Anbindung über Modbus TCP"],
       teaser: "Fehlende, zusätzliche und verbogene Bauteile, Lötfehler und Verschmutzung auf Leiterplatten, nur mit Gutplatinen angelernt.",
       sections: [
-        { figure: true },
+        { figure: "bent" },
         {
           h2: "Warum sich die Leiterplattenprüfung schwer automatisieren lässt",
           paras: [
@@ -161,6 +169,7 @@ const pages = [
             ["Druckfehler", "Verwischte oder fehlende Beschriftungen und Kennzeichnungen."],
           ],
         },
+        { figure: "missing" },
         {
           h2: "So funktioniert es",
           steps: [
@@ -351,7 +360,7 @@ const pages = [
             ["One limit, PASS or FAIL", "You set a single pass/fail limit. The score turns into a clear verdict for every part."],
           ],
         },
-        { figure: true },
+        { figure: "bent" },
         {
           h2: "Three ways to automate visual inspection",
           table: {
@@ -431,7 +440,7 @@ const pages = [
             ["Ein Grenzwert, i.O. oder n.i.O.", "Sie legen einen einzigen Grenzwert fest. Aus dem Score wird für jedes Teil ein klares Ergebnis."],
           ],
         },
-        { figure: true },
+        { figure: "bent" },
         {
           h2: "Drei Wege, die Sichtprüfung zu automatisieren",
           table: {

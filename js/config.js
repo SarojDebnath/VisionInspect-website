@@ -54,7 +54,8 @@ window.SITE_CONFIG = {
   showcase: [
     { key: "bent", photo: "img/showcase/03-bent-pin-photo.webp", heatmap: "img/showcase/03-bent-pin-heatmap.webp", example: false,
       credit: { text: "VisA dataset (Amazon), CC BY 4.0", url: "https://github.com/amazon-science/spot-diff" } },
-    { key: "missing", photo: "img/showcase/01-missing-photo.svg", heatmap: "img/showcase/01-missing-heatmap.svg", example: true },
+    { key: "missing", photo: "img/showcase/01-missing-hole-photo.webp", heatmap: "img/showcase/01-missing-hole-heatmap.webp", example: false,
+      credit: { text: "PKU-Market-PCB dataset (Peking University)", url: "https://robotics.pkusz.edu.cn/resources/datasetENG/" } },
     { key: "extra", photo: "img/showcase/02-extra-photo.svg", heatmap: "img/showcase/02-extra-heatmap.svg", example: true },
     { key: "scratch", photo: "img/showcase/04-scratch-photo.svg", heatmap: "img/showcase/04-scratch-heatmap.svg", example: true },
     { key: "contamination", photo: "img/showcase/05-contamination-photo.svg", heatmap: "img/showcase/05-contamination-heatmap.svg", example: true },

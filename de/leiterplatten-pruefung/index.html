@@ -289,35 +289,47 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="s4">
+    <section class="section section-tight">
       <div class="container">
-        <header class="section-head"><h2 id="s4">So funktioniert es</h2></header>
-        <ol class="page-steps"><li><span class="step-num">01</span><div><h3>Gutplatinen zeigen</h3><p>Referenzfoto aufnehmen, Prüfbereich markieren und Fotos guter Platinen hinzufügen. Fehlerbilder sind optional.</p></div></li><li><span class="step-num">02</span><div><h3>Modell erstellen</h3><p>Ein Klick. Jedes Foto wird automatisch an der Referenz ausgerichtet, und das Modell lernt, wie eine gute Platine aussieht.</p></div></li><li><span class="step-num">03</span><div><h3>Testen und Grenzwert setzen</h3><p>Testbilder prüfen, Heatmaps ansehen und einen einzigen i.O./n.i.O.-Grenzwert festlegen.</p></div></li><li><span class="step-num">04</span><div><h3>Live oder im Stapel prüfen</h3><p>Kamera oder Ordner anbinden. Jede Platine erhält Heatmap, Score und i.O. oder n.i.O., direkt neben der ähnlichsten Gutplatine.</p></div></li></ol>
+        <figure class="example-figure">
+          <div class="example-pair">
+            <div class="example-img"><img src="/img/showcase/01-missing-hole-photo.webp" alt="Foto der Platine" width="896" height="560" loading="lazy" decoding="async"><span class="compare-tag compare-tag-l">Foto</span></div>
+            <div class="example-img"><img src="/img/showcase/01-missing-hole-heatmap.webp" alt="Heatmap von VisionInspect" width="896" height="560" loading="lazy" decoding="async"><span class="compare-tag compare-tag-l">Heatmap</span></div>
+          </div>
+          <figcaption>Eine unbestückte Leiterplatte mit drei fehlenden Bohrungen. Alle drei sind markiert, und die Platine ist n.i.O. <span class="slide-credit">Bild: <a href="https://robotics.pkusz.edu.cn/resources/datasetENG/" rel="noopener">PKU-Market-PCB dataset (Peking University)</a></span></figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section section-alt" aria-labelledby="s5">
       <div class="container">
-        <header class="section-head"><h2 id="s5">Zweite Prüfung nach der AOI</h2></header>
-        <div class="prose"><p>Wenn Sie bereits eine automatische optische Inspektion (AOI) einsetzen, kann VisionInspect die Platinen ein zweites Mal prüfen, mit den Bildern, die Ihr AOI-System speichert, oder mit einer eigenen Kamera. Richten Sie es auf den Ordner, in den Ihre AOI schreibt, und jedes neue Bild wird sofort geprüft.</p></div>
+        <header class="section-head"><h2 id="s5">So funktioniert es</h2></header>
+        <ol class="page-steps"><li><span class="step-num">01</span><div><h3>Gutplatinen zeigen</h3><p>Referenzfoto aufnehmen, Prüfbereich markieren und Fotos guter Platinen hinzufügen. Fehlerbilder sind optional.</p></div></li><li><span class="step-num">02</span><div><h3>Modell erstellen</h3><p>Ein Klick. Jedes Foto wird automatisch an der Referenz ausgerichtet, und das Modell lernt, wie eine gute Platine aussieht.</p></div></li><li><span class="step-num">03</span><div><h3>Testen und Grenzwert setzen</h3><p>Testbilder prüfen, Heatmaps ansehen und einen einzigen i.O./n.i.O.-Grenzwert festlegen.</p></div></li><li><span class="step-num">04</span><div><h3>Live oder im Stapel prüfen</h3><p>Kamera oder Ordner anbinden. Jede Platine erhält Heatmap, Score und i.O. oder n.i.O., direkt neben der ähnlichsten Gutplatine.</p></div></li></ol>
       </div>
     </section>
 
     <section class="section" aria-labelledby="s6">
       <div class="container">
-        <header class="section-head"><h2 id="s6">Passt in Ihre Linie</h2></header>
-        <ul class="tiles"><li><h3>Modbus TCP</h3><p>Direkt mit Ihrer SPS sprechen, z. B. bei n.i.O. eine Spule schalten.</p></li><li><h3>MQTT</h3><p>Jedes Ergebnis an Ihren Broker senden.</p></li><li><h3>Webhooks</h3><p>Signierte HTTP-Aufrufe an Ihr MES oder andere Systeme.</p></li><li><h3>GPIO-Edge-Agent</h3><p>Signallampen und Relais schalten, z. B. über einen Raspberry Pi.</p></li><li><h3>CSV-/ZIP-Export</h3><p>Ergebnisse, Zyklusprotokolle und Bilder für Ihre Dokumentation.</p></li><li><h3>Jede Kamera</h3><p>IP-Kameras per RTSP, USB-Kameras, eine Webcam oder ein überwachter Ordner.</p></li></ul>
+        <header class="section-head"><h2 id="s6">Zweite Prüfung nach der AOI</h2></header>
+        <div class="prose"><p>Wenn Sie bereits eine automatische optische Inspektion (AOI) einsetzen, kann VisionInspect die Platinen ein zweites Mal prüfen, mit den Bildern, die Ihr AOI-System speichert, oder mit einer eigenen Kamera. Richten Sie es auf den Ordner, in den Ihre AOI schreibt, und jedes neue Bild wird sofort geprüft.</p></div>
       </div>
     </section>
 
     <section class="section section-alt" aria-labelledby="s7">
       <div class="container">
-        <header class="section-head"><h2 id="s7">Ihre Daten bleiben in Ihrem Werk</h2></header>
+        <header class="section-head"><h2 id="s7">Passt in Ihre Linie</h2></header>
+        <ul class="tiles"><li><h3>Modbus TCP</h3><p>Direkt mit Ihrer SPS sprechen, z. B. bei n.i.O. eine Spule schalten.</p></li><li><h3>MQTT</h3><p>Jedes Ergebnis an Ihren Broker senden.</p></li><li><h3>Webhooks</h3><p>Signierte HTTP-Aufrufe an Ihr MES oder andere Systeme.</p></li><li><h3>GPIO-Edge-Agent</h3><p>Signallampen und Relais schalten, z. B. über einen Raspberry Pi.</p></li><li><h3>CSV-/ZIP-Export</h3><p>Ergebnisse, Zyklusprotokolle und Bilder für Ihre Dokumentation.</p></li><li><h3>Jede Kamera</h3><p>IP-Kameras per RTSP, USB-Kameras, eine Webcam oder ein überwachter Ordner.</p></li></ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="s8">
+      <div class="container">
+        <header class="section-head"><h2 id="s8">Ihre Daten bleiben in Ihrem Werk</h2></header>
         <div class="prose"><p>VisionInspect läuft auf einem PC oder Server in Ihrem eigenen Netzwerk und funktioniert komplett offline; auch Installationen ohne Netzwerkverbindung (air-gapped) werden unterstützt. Nichts verlässt Ihr Netzwerk, solange Sie die optionale KI-Zweitmeinung nicht einschalten.</p><p>Sie brauchen einen PC mit NVIDIA-Grafikkarte. Wir entwickeln und testen auf einem Laptop mit NVIDIA-RTX-GPU mit 4 GB Grafikspeicher; mehr Grafikspeicher wird empfohlen.</p></div>
       </div>
     </section>
 
-    <section class="section" id="faq" aria-labelledby="faq-title">
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
       <div class="container split">
         <header class="split-head"><h2 id="faq-title">Häufige Fragen</h2></header>
         <div class="faq">
@@ -330,7 +342,7 @@
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="related-title">
+    <section class="section" aria-labelledby="related-title">
       <div class="container">
         <header class="section-head"><h2 id="related-title">Weitere Anwendungen</h2></header>
         <ul class="tiles tiles-related">
@@ -340,7 +352,7 @@
       </div>
     </section>
 
-    <section class="section page-cta" aria-labelledby="cta-title">
+    <section class="section page-cta section-alt" aria-labelledby="cta-title">
       <div class="container">
         <h2 id="cta-title">Testen Sie es mit Ihren eigenen Platinen</h2>
         <p class="lead">Senden Sie uns ein paar Fotos guter Platinen, und von Fehlern, falls vorhanden. Wir melden uns, um eine Demo oder einen einwöchigen Test mit Ihren eigenen Teilen zu vereinbaren.</p>

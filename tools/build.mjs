@@ -229,9 +229,9 @@ const homeHref = (lang) => "/" + PAGE_PATH[lang];
 const icon = (id) => `<svg class="icon" aria-hidden="true"><use href="#${id}"/></svg>`;
 const NAV_LABEL = { pcb: "navPcb", assembly: "navAssembly", anomaly: "navAnomaly" };
 
-function figureHtml(lang) {
+function figureHtml(lang, key) {
   const u = UI[lang];
-  const s = CONFIG.showcase.find((x) => x.key === "bent");
+  const s = CONFIG.showcase.find((x) => x.key === key);
   const credit = s.credit
     ? ` <span class="slide-credit">${escText(u.credit)}: <a href="${escAttr(s.credit.url)}" rel="noopener">${escText(s.credit.text)}</a></span>`
     : "";
@@ -242,7 +242,7 @@ function figureHtml(lang) {
             ${img(s.photo, u.figPhoto, t(lang, "show.photo"))}
             ${img(s.heatmap, u.figHeat, t(lang, "show.heatmap"))}
           </div>
-          <figcaption>${escText(u.figCaption)}${credit}</figcaption>
+          <figcaption>${escText(u.figCaptions[key])}${credit}</figcaption>
         </figure>`;
 }
 
@@ -271,7 +271,8 @@ function renderPage(page, lang) {
   const u = UI[lang];
   const urls = Object.fromEntries(LANGS.map((l) => [l, pageUrl(page.key, l)]));
   const home = homeHref(lang);
-  const figure = c.sections.some((s) => s.figure) ? CONFIG.showcase.find((x) => x.key === "bent") : null;
+  const first = c.sections.find((s) => s.figure);
+  const figure = first ? CONFIG.showcase.find((x) => x.key === first.figure) : null;
 
   const graph = [
     organization(),
@@ -312,7 +313,7 @@ function renderPage(page, lang) {
   const sections = c.sections
     .map((s) => {
       const bg = alt();
-      if (s.figure) return `<section class="section section-tight${bg}">\n      <div class="container">\n        ${figureHtml(lang)}\n      </div>\n    </section>`;
+      if (s.figure) return `<section class="section section-tight${bg}">\n      <div class="container">\n        ${figureHtml(lang, s.figure)}\n      </div>\n    </section>`;
       const id = `s${n}`;
       return `<section class="section${bg}" aria-labelledby="${id}">
       <div class="container">
