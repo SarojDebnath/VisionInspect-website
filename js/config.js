@@ -54,7 +54,7 @@ window.SITE_CONFIG = {
    * For a video slide use: { key: "...", video: "img/showcase/clip.mp4", poster: "...jpg" }
    * The carousel advances by itself every autoplayMs (not with reduced motion).
    */
-  autoplayMs: 3000,
+  autoplayMs: 1000,
   // The step lists in "Two modules" also advance by themselves, once every
   // step of a module has a real screenshot.
   stepsAutoplayMs: 3000,
