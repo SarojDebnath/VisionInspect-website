@@ -31,10 +31,10 @@ window.SITE_CONFIG = {
    * The alt text comes from the dictionaries (keys "shot.<name>").
    */
   screenshots: {
-    m1s1: null,
-    m1s2: null,
-    m1s3: null,
-    m1s4: null,
+    m1s1: "img/screenshots/inspection-reference-roi.webp",
+    m1s2: "img/screenshots/inspection-good-samples.webp",
+    m1s3: "img/screenshots/inspection-pass-fail-limit.webp",
+    m1s4: "img/screenshots/inspection-result-review.webp",
     m2s1: null,
     m2s2: null,
     m2s3: null,
@@ -57,7 +57,8 @@ window.SITE_CONFIG = {
     { key: "missing", photo: "img/showcase/01-missing-hole-photo.webp", heatmap: "img/showcase/01-missing-hole-heatmap.webp", example: false,
       credit: { text: "PKU-Market-PCB dataset (Peking University)", url: "https://robotics.pkusz.edu.cn/resources/datasetENG/" } },
     { key: "extra", photo: "img/showcase/02-extra-photo.svg", heatmap: "img/showcase/02-extra-heatmap.svg", example: true },
-    { key: "scratch", photo: "img/showcase/04-scratch-photo.svg", heatmap: "img/showcase/04-scratch-heatmap.svg", example: true },
+    { key: "crack", photo: "img/showcase/04-crack-photo.webp", heatmap: "img/showcase/04-crack-heatmap.webp", example: false,
+      credit: { text: "VisA dataset (Amazon), CC BY 4.0", url: "https://github.com/amazon-science/spot-diff" } },
     { key: "contamination", photo: "img/showcase/05-contamination-photo.svg", heatmap: "img/showcase/05-contamination-heatmap.svg", example: true },
     { key: "print", photo: "img/showcase/06-print-photo.svg", heatmap: "img/showcase/06-print-heatmap.svg", example: true },
     { key: "process", photo: "img/showcase/07-process-skipped-photo.svg", heatmap: "img/showcase/07-process-skipped-heatmap.svg", example: true }

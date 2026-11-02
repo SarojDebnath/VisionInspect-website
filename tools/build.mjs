@@ -232,6 +232,7 @@ const NAV_LABEL = { pcb: "navPcb", assembly: "navAssembly", anomaly: "navAnomaly
 function figureHtml(lang, key) {
   const u = UI[lang];
   const s = CONFIG.showcase.find((x) => x.key === key);
+  const alts = (u.figAlts && u.figAlts[key]) || [u.figPhoto, u.figHeat];
   const credit = s.credit
     ? ` <span class="slide-credit">${escText(u.credit)}: <a href="${escAttr(s.credit.url)}" rel="noopener">${escText(s.credit.text)}</a></span>`
     : "";
@@ -239,8 +240,8 @@ function figureHtml(lang, key) {
     `<div class="example-img"><img src="/${src}" alt="${escAttr(alt)}" width="896" height="560" loading="lazy" decoding="async"><span class="compare-tag compare-tag-l">${escText(tag)}</span></div>`;
   return `<figure class="example-figure">
           <div class="example-pair">
-            ${img(s.photo, u.figPhoto, t(lang, "show.photo"))}
-            ${img(s.heatmap, u.figHeat, t(lang, "show.heatmap"))}
+            ${img(s.photo, alts[0], t(lang, "show.photo"))}
+            ${img(s.heatmap, alts[1], t(lang, "show.heatmap"))}
           </div>
           <figcaption>${escText(u.figCaptions[key])}${credit}</figcaption>
         </figure>`;

@@ -26,6 +26,10 @@ const ui = {
     figCaptions: {
       bent: "A bent pin on a sensor board, found by a model trained on a single good board. The heat map marks where the board differs from the good one.",
       missing: "A bare PCB with three missing drill holes. All three are marked, and the board fails.",
+      crack: "A crack and a pit in a piece of chewing gum. The model learned what good looks like from 16 good pieces. Score 0.58 against a limit of 0.17: a clear FAIL.",
+    },
+    figAlts: {
+      crack: ["Photo of the damaged part", "Heat map from VisionInspect"],
     },
     credit: "Image",
     learnMore: "Learn more",
@@ -43,6 +47,10 @@ const ui = {
     figCaptions: {
       bent: "Ein verbogener Pin auf einer Sensorplatine, gefunden von einem Modell, das mit nur einer Gutplatine angelernt wurde. Die Heatmap zeigt, wo die Platine von der guten abweicht.",
       missing: "Eine unbestückte Leiterplatte mit drei fehlenden Bohrungen. Alle drei sind markiert, und die Platine ist n.i.O.",
+      crack: "Ein Riss und ein Ausbruch in einem Kaugummi. Das Modell lernte den Gutzustand aus 16 guten Stücken. Score 0,58 bei einer Grenze von 0,17: klar n.i.O.",
+    },
+    figAlts: {
+      crack: ["Foto des beschädigten Teils", "Heatmap von VisionInspect"],
     },
     credit: "Bild",
     learnMore: "Mehr erfahren",
@@ -401,6 +409,7 @@ const pages = [
             "Because it compares with good parts instead of looking for one defect type, the same approach finds scratches, dents, contamination, print errors and missing or extra parts on metal, plastic, glass or painted parts, as well as missing items in packs and boxes.",
           ],
         },
+        { figure: "crack" },
       ],
       faq: [
         ["How many good samples do I need?", "It depends on how much your good parts vary. For the bent-pin example on this page, one good board was enough. Start with a set of good parts, then use the Test step. If OK parts are flagged, add them as good samples."],
@@ -481,6 +490,7 @@ const pages = [
             "Weil es mit Gutteilen vergleicht, statt nach einer bestimmten Fehlerart zu suchen, findet derselbe Ansatz Kratzer, Dellen, Verschmutzung, Druckfehler und fehlende oder zusätzliche Teile auf Metall, Kunststoff, Glas oder lackierten Teilen, ebenso fehlende Artikel in Packungen und Kartons.",
           ],
         },
+        { figure: "crack" },
       ],
       faq: [
         ["Wie viele Gutteile brauche ich?", "Das hängt davon ab, wie stark Ihre Gutteile variieren. Für das Beispiel mit dem verbogenen Pin auf dieser Seite reichte eine einzige Gutplatine. Beginnen Sie mit einer Reihe von Gutteilen und nutzen Sie dann den Testschritt. Werden gute Teile markiert, fügen Sie sie als Gutteile hinzu."],
