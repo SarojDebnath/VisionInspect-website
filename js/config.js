@@ -54,7 +54,7 @@ window.SITE_CONFIG = {
    * For a video slide use: { key: "...", video: "img/showcase/clip.mp4", poster: "...jpg" }
    * The carousel advances by itself every autoplayMs (not with reduced motion).
    */
-  autoplayMs: 6000,
+  autoplayMs: 3000,
   showcase: [
     { key: "led", photo: "img/showcase/00-bent-led-photo.webp", heatmap: "img/showcase/00-bent-led-heatmap.webp", example: false,
       credit: VISA },
