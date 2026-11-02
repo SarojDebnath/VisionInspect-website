@@ -331,6 +331,11 @@ main:focus { outline: none; }
 }
 .dot[aria-current="true"]::after { background: var(--accent); }
 .dot:hover::after { background: var(--accent-dark); }
+@media (max-width: 599px) {
+  .carousel-controls { gap: 8px; }
+  .dot { width: 18px; }
+  .dot::after { left: 3px; right: 3px; }
+}
 
 .compare {
   --pos: 50%;

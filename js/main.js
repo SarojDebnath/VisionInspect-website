@@ -242,7 +242,7 @@
       var dot = document.createElement("button");
       dot.type = "button";
       dot.className = "dot";
-      dot.addEventListener("click", function () { go(i, true); });
+      dot.addEventListener("click", function () { stop(); go(i, true); });
       dotsBox.appendChild(dot);
     });
 
@@ -296,14 +296,16 @@
       dotEls.forEach(function (d, n) {
         d.setAttribute("aria-label", t("show.goto", { n: n + 1 }));
       });
+      setPlayLabel();
     };
 
-    root.querySelector("[data-prev]").addEventListener("click", function () { go(index - 1, true); });
-    root.querySelector("[data-next]").addEventListener("click", function () { go(index + 1, true); });
+    root.querySelector("[data-prev]").addEventListener("click", function () { stop(); go(index - 1, true); });
+    root.querySelector("[data-next]").addEventListener("click", function () { stop(); go(index + 1, true); });
 
     // Swipe on the caption / frame edges (the range input handles its own drag).
     var startX = null;
     track.addEventListener("touchstart", function (e) {
+      stop();
       startX = e.target.classList.contains("compare-range") ? null : e.touches[0].clientX;
     }, { passive: true });
     track.addEventListener("touchend", function (e) {
@@ -313,7 +315,58 @@
       startX = null;
     }, { passive: true });
 
+    // ---------- autoplay ----------
+    // Advances every CONFIG.autoplayMs. Pauses while the pointer or focus is
+    // in the carousel, while it is off-screen or the tab is hidden. Any slide
+    // change by the user, a touch, or the pause button stops it for good.
+    var playBtn = root.querySelector("[data-autoplay]");
+    var delay = CONFIG.autoplayMs || 0;
+    var playing = !reducedMotion && delay > 0 && slides.length > 1;
+    var hover = false, focus = false, visible = true, timer = null;
+
+    function setPlayLabel() {
+      if (!playBtn) return;
+      playBtn.setAttribute("aria-label", t(playing ? "show.pause" : "show.play"));
+      playBtn.querySelector("use").setAttribute("href", playing ? "#i-pause" : "#i-play");
+    }
+    function schedule() {
+      clearTimeout(timer);
+      timer = null;
+      if (playing && !hover && !focus && visible && !document.hidden) {
+        timer = setTimeout(function () { go(index + 1, false); schedule(); }, delay);
+      }
+    }
+    function stop() {
+      playing = false;
+      setPlayLabel();
+      schedule();
+    }
+
+    if (playBtn && delay > 0 && slides.length > 1) {
+      playBtn.hidden = false;
+      playBtn.addEventListener("click", function () {
+        playing = !playing;
+        setPlayLabel();
+        if (playing) go(index + 1, false);
+        schedule();
+      });
+    }
+    root.addEventListener("mouseenter", function () { hover = true; schedule(); });
+    root.addEventListener("mouseleave", function () { hover = false; schedule(); });
+    root.addEventListener("focusin", function (e) { focus = e.target !== playBtn; schedule(); });
+    root.addEventListener("focusout", function () { focus = false; schedule(); });
+    track.addEventListener("pointerdown", stop);
+    document.addEventListener("visibilitychange", schedule);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        schedule();
+      }, { threshold: 0.3 }).observe(root);
+    }
+
     go(0, false);
+    setPlayLabel();
+    schedule();
     return api;
   })();
 

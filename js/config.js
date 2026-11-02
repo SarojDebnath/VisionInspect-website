@@ -2,6 +2,8 @@
  * Site configuration — the ONLY place to change the product name, contact
  * details, screenshots and showcase images.
  */
+var VISA = { text: "VisA dataset (Amazon), CC BY 4.0", url: "https://github.com/amazon-science/spot-diff" };
+
 window.SITE_CONFIG = {
   productName: "VisionInspect",
   contactEmail: "contact@visioninspect.de",
@@ -50,17 +52,28 @@ window.SITE_CONFIG = {
    * labels: ["reference", "flagged"] (dictionary keys "show.<label>").
    * Images from a public dataset need a credit: { text: "...", url: "..." }.
    * For a video slide use: { key: "...", video: "img/showcase/clip.mp4", poster: "...jpg" }
+   * The carousel advances by itself every autoplayMs (not with reduced motion).
    */
+  autoplayMs: 6000,
   showcase: [
+    { key: "led", photo: "img/showcase/00-bent-led-photo.webp", heatmap: "img/showcase/00-bent-led-heatmap.webp", example: false,
+      credit: VISA },
     { key: "bent", photo: "img/showcase/03-bent-pin-photo.webp", heatmap: "img/showcase/03-bent-pin-heatmap.webp", example: false,
-      credit: { text: "VisA dataset (Amazon), CC BY 4.0", url: "https://github.com/amazon-science/spot-diff" } },
+      credit: VISA },
     { key: "missing", photo: "img/showcase/01-missing-hole-photo.webp", heatmap: "img/showcase/01-missing-hole-heatmap.webp", example: false,
       credit: { text: "PKU-Market-PCB dataset (Peking University)", url: "https://robotics.pkusz.edu.cn/resources/datasetENG/" } },
-    { key: "extra", photo: "img/showcase/02-extra-photo.svg", heatmap: "img/showcase/02-extra-heatmap.svg", example: true },
     { key: "crack", photo: "img/showcase/04-crack-photo.webp", heatmap: "img/showcase/04-crack-heatmap.webp", example: false,
-      credit: { text: "VisA dataset (Amazon), CC BY 4.0", url: "https://github.com/amazon-science/spot-diff" } },
-    { key: "contamination", photo: "img/showcase/05-contamination-photo.svg", heatmap: "img/showcase/05-contamination-heatmap.svg", example: true },
-    { key: "print", photo: "img/showcase/06-print-photo.svg", heatmap: "img/showcase/06-print-heatmap.svg", example: true },
+      credit: VISA },
+    { key: "extra", photo: "img/showcase/cashew-extra-photo.webp", heatmap: "img/showcase/cashew-extra-heatmap.webp", example: false,
+      credit: VISA },
+    { key: "many", photo: "img/showcase/macaroni-photo.webp", heatmap: "img/showcase/macaroni-heatmap.webp", example: false,
+      credit: VISA },
+    { key: "contamination", photo: "img/showcase/fryum-photo.webp", heatmap: "img/showcase/fryum-heatmap.webp", example: false,
+      credit: VISA },
+    { key: "hole", photo: "img/showcase/cashew-hole-photo.webp", heatmap: "img/showcase/cashew-hole-heatmap.webp", example: false,
+      credit: VISA },
+    { key: "broken", photo: "img/showcase/pipe-fryum-photo.webp", heatmap: "img/showcase/pipe-fryum-heatmap.webp", example: false,
+      credit: VISA },
     { key: "process", photo: "img/showcase/07-process-skipped-photo.svg", heatmap: "img/showcase/07-process-skipped-heatmap.svg", example: true }
   ]
 };
