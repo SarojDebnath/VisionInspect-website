@@ -55,6 +55,9 @@ window.SITE_CONFIG = {
    * The carousel advances by itself every autoplayMs (not with reduced motion).
    */
   autoplayMs: 3000,
+  // The step lists in "Two modules" also advance by themselves, once every
+  // step of a module has a real screenshot.
+  stepsAutoplayMs: 3000,
   showcase: [
     { key: "led", photo: "img/showcase/00-bent-led-photo.webp", heatmap: "img/showcase/00-bent-led-heatmap.webp", example: false,
       credit: VISA },
@@ -73,7 +76,6 @@ window.SITE_CONFIG = {
     { key: "hole", photo: "img/showcase/cashew-hole-photo.webp", heatmap: "img/showcase/cashew-hole-heatmap.webp", example: false,
       credit: VISA },
     { key: "broken", photo: "img/showcase/pipe-fryum-photo.webp", heatmap: "img/showcase/pipe-fryum-heatmap.webp", example: false,
-      credit: VISA },
-    { key: "process", photo: "img/showcase/07-process-skipped-photo.svg", heatmap: "img/showcase/07-process-skipped-heatmap.svg", example: true }
+      credit: VISA }
   ]
 };

@@ -51,7 +51,6 @@ window.I18N = {
     "show.bent": "Bent pin on a sensor board. Trained on a single good board.",
     "show.crack": "Surface damage: a crack and a pit, flagged far above the limit. Learned from 16 good pieces.",
     "show.contamination": "Contamination: foreign spots on a wheel-shaped snack.",
-    "show.process": "Process: step 3 “Insert manual” was skipped.",
 
     "mod.eyebrow": "How it works",
     "mod.title": "Two modules. One app.",
@@ -291,7 +290,6 @@ window.I18N = {
     "show.bent": "Verbogener Pin auf einer Sensorplatine. Angelernt mit nur einer Gutplatine.",
     "show.crack": "Oberflächenschaden: Riss und Ausbruch, weit über der Grenze markiert. Angelernt mit 16 guten Stücken.",
     "show.contamination": "Verschmutzung: Fremdflecken auf einem radförmigen Snack.",
-    "show.process": "Prozess: Schritt 3 „Anleitung einlegen“ wurde ausgelassen.",
 
     "mod.eyebrow": "So funktioniert es",
     "mod.title": "Zwei Module. Eine Anwendung.",

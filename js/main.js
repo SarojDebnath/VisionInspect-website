@@ -419,17 +419,58 @@
   })();
 
   // ---------- step lists: clicking a step swaps the screenshot ----------
+  // A list whose steps all have screenshots also advances by itself, paused
+  // while hovered, off-screen or in a hidden tab, and stopped by any click.
   $all("[data-stepper]").forEach(function (list) {
     var buttons = $all(".step-btn", list);
-    var fig = list.parentNode.querySelector("[data-shot]");
+    var box = list.parentNode;
+    var fig = box.querySelector("[data-shot]");
+    var current = 0;
     function activate(btn) {
+      current = buttons.indexOf(btn);
       buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
       fig.setAttribute("data-shot", btn.getAttribute("data-step"));
       renderShot(fig);
     }
+
+    var delay = CONFIG.stepsAutoplayMs || 0;
+    var playing = !reducedMotion && delay > 0 && buttons.every(function (b) {
+      return CONFIG.screenshots[b.getAttribute("data-step")];
+    });
+    var hover = false, visible = false, timer = null;
+    function schedule() {
+      clearTimeout(timer);
+      if (playing && !hover && visible && !document.hidden && box.offsetParent) {
+        timer = setTimeout(function () {
+          activate(buttons[(current + 1) % buttons.length]);
+          schedule();
+        }, delay);
+      }
+    }
+    if (playing) {
+      // Load all screenshots up front so the swap does not flash.
+      buttons.forEach(function (b) { new Image().src = asset(CONFIG.screenshots[b.getAttribute("data-step")]); });
+      box.addEventListener("mouseenter", function () { hover = true; schedule(); });
+      box.addEventListener("mouseleave", function () { hover = false; schedule(); });
+      document.addEventListener("visibilitychange", schedule);
+      $all('[role="tab"]').forEach(function (tab) { tab.addEventListener("click", schedule); });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          schedule();
+        }, { threshold: 0.3 }).observe(box);
+      } else {
+        visible = true;
+      }
+    }
+
     buttons.forEach(function (b) {
       b.setAttribute("aria-pressed", "false");
-      b.addEventListener("click", function () { activate(b); });
+      b.addEventListener("click", function () {
+        playing = false;
+        clearTimeout(timer);
+        activate(b);
+      });
     });
     activate(buttons[0]);
   });
