@@ -238,6 +238,11 @@ main:focus { outline: none; }
   .site-nav a:hover { background: var(--bg-alt); color: var(--ink); }
   .nav-contact { display: none; }
 }
+@media (min-width: 1000px) and (max-width: 1149px) {
+  .site-nav { margin-right: 4px; }
+  .site-nav a { padding: .45rem .5rem; font-size: .9rem; }
+  .nav-faq { display: none; }   /* solution and blog pages: FAQ is on the home page */
+}
 
 /* ---------- sections ---------- */
 .section { padding: 80px 0; }
@@ -808,3 +813,54 @@ input:focus-visible, textarea:focus-visible { outline: none; border-color: var(-
 .page-cta h2 { max-width: 24ch; }
 .page-cta .cta-row { gap: 16px 32px; }
 .page-cta .contact-direct { margin: 0; }
+
+/* ---------- blog (blog/, de/blog/, written by tools/build.mjs) ---------- */
+.post-list { display: grid; gap: 32px; }
+@media (min-width: 700px) { .post-list { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1050px) { .post-list { grid-template-columns: repeat(3, 1fr); } }
+.post-card { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg); transition: border-color .15s; }
+.post-card:hover { border-color: var(--accent); }
+.post-card-img { display: block; aspect-ratio: 16 / 10; background: var(--bg-alt); }
+.post-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.post-card-body { padding: 1.25rem 1.25rem 1.5rem; }
+.post-card h2 { margin: .35rem 0 .5rem; font-size: 1.2rem; line-height: 1.3; }
+.post-card h2 a { color: var(--ink); text-decoration: none; }
+.post-card h2 a:hover { color: var(--accent); }
+.post-card p { margin: 0; color: var(--muted); font-size: .97rem; }
+.post-meta { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: 0; color: var(--muted); font-size: .9rem; }
+.post-card .post-meta { font-size: .85rem; }
+
+.post-hero .container { max-width: 760px; }
+.post-hero h1 { max-width: 24ch; font-size: clamp(2rem, 4.2vw, 2.9rem); }
+.post-hero .post-meta { margin-top: 1rem; }
+.post-note { margin: .75rem 0 0; color: var(--muted); font-size: .9rem; font-style: italic; }
+.post-body { max-width: 760px; padding-top: 40px; padding-bottom: 72px; }
+.post-cover figure { margin: 0 0 2.5rem; }
+.post-cover img { width: 100%; height: auto; border-radius: var(--radius); }
+
+.article-body { color: var(--text); font-size: 1.06rem; line-height: 1.75; }
+.article-body > :first-child { margin-top: 0; }
+.article-body h2 { margin: 2.5rem 0 .75rem; font-size: 1.6rem; line-height: 1.25; scroll-margin-top: calc(var(--header-h) + 16px); }
+.article-body h3 { margin: 2rem 0 .5rem; font-size: 1.25rem; scroll-margin-top: calc(var(--header-h) + 16px); }
+.article-body p, .article-body ul, .article-body ol { margin: 0 0 1.1rem; }
+.article-body ul, .article-body ol { padding-left: 1.4rem; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li { margin-bottom: .35rem; }
+.article-body a { color: var(--accent); }
+.article-body strong { color: var(--ink); }
+.article-body figure { margin: 2rem 0; }
+.article-body figure img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+.article-body figcaption { margin-top: .5rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.article-body blockquote { margin: 1.5rem 0; padding: .25rem 0 .25rem 1.25rem; border-left: 3px solid var(--accent); color: var(--ink); }
+.article-body code { padding: .1em .35em; border-radius: 4px; background: var(--bg-alt); font-size: .9em; }
+.article-body pre { margin: 1.5rem 0; padding: 1rem 1.25rem; overflow-x: auto; border-radius: var(--radius); background: #0b1b2e; color: #e6edf3; font-size: .9rem; line-height: 1.6; }
+.article-body pre code { padding: 0; background: none; color: inherit; }
+.article-body hr { margin: 2.5rem 0; border: 0; border-top: 1px solid var(--line); }
+.article-body .table-wrap { margin: 1.5rem 0; }
+.article-table { width: 100%; border-collapse: collapse; font-size: .95rem; line-height: 1.5; }
+.article-table th, .article-table td { padding: .7rem .9rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.article-table thead th { color: var(--ink); background: var(--bg-alt); }
+.article-table tbody tr:last-child > * { border-bottom: 0; }
+.post-tags { margin: 2.5rem 0 0; color: var(--muted); font-size: .9rem; }
+.post-tags .tag { display: inline-block; margin: .15rem .2rem; padding: .15rem .6rem; border-radius: 999px; background: var(--bg-alt); border: 1px solid var(--line); }

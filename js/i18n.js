@@ -15,6 +15,7 @@ window.I18N = {
     "nav.integrations": "Integrations",
     "nav.privacy": "Privacy",
     "nav.faq": "FAQ",
+    "nav.blog": "Blog",
     "nav.contact": "Contact",
     "lang.label": "Language",
 
@@ -237,6 +238,7 @@ window.I18N = {
     "footer.pcb": "PCB inspection",
     "footer.assembly": "Assembly monitoring",
     "footer.anomaly": "Inspection without defect images",
+    "footer.blog": "Blog",
     "footer.imprint": "Imprint",
     "footer.privacy": "Privacy policy",
     "footer.linkedin": "VisionInspect on LinkedIn",
@@ -254,6 +256,7 @@ window.I18N = {
     "nav.integrations": "Integrationen",
     "nav.privacy": "Datenhoheit",
     "nav.faq": "FAQ",
+    "nav.blog": "Blog",
     "nav.contact": "Kontakt",
     "lang.label": "Sprache",
 
@@ -476,6 +479,7 @@ window.I18N = {
     "footer.pcb": "Leiterplattenprüfung",
     "footer.assembly": "Montageüberwachung",
     "footer.anomaly": "Sichtprüfung ohne Fehlerbilder",
+    "footer.blog": "Blog",
     "footer.imprint": "Impressum",
     "footer.privacy": "Datenschutzerklärung",
     "footer.linkedin": "VisionInspect auf LinkedIn",

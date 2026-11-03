@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VisionInspect Blog</title>
+    <link>https://visioninspect.de/de/blog/</link>
+    <description>Echte Ergebnisse, Aufbauten und Erfahrungen aus KI-Sichtprüfung und Montageüberwachung: Anomalieerkennung, Leiterplattenprüfung und Qualitätskontrolle mit Kameras.</description>
+    <language>de</language>
+    <atom:link href="https://visioninspect.de/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Tue, 03 Nov 2026 08:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Von 16 Gutteilen zur Gut/Schlecht-Grenze: ein Praxisbeispiel</title>
+      <link>https://visioninspect.de/de/blog/anomalieerkennung-praxis-16-gutteile/</link>
+      <guid isPermaLink="true">https://visioninspect.de/de/blog/anomalieerkennung-praxis-16-gutteile/</guid>
+      <pubDate>Tue, 03 Nov 2026 08:00:00 GMT</pubDate>
+      <description>Eine komplette Einrichtung der Anomalieerkennung in VisionInspect: Referenz, 16 Gutteile, automatische Grenze und ein Riss, erkannt mit Score 0,578.</description>
+      <category>Anomalieerkennung</category>
+      <category>Praxisbeispiel</category>
+      <category>Oberflächenfehler</category>
+      <enclosure url="https://visioninspect.de/img/showcase/04-crack-heatmap.webp" length="68706" type="image/webp"/>
+    </item>
+  </channel>
+</rss>

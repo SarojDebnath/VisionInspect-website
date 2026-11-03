@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VisionInspect blog</title>
+    <link>https://visioninspect.de/blog/</link>
+    <description>Real results, setups and lessons from AI visual inspection and assembly monitoring: anomaly detection, PCB inspection and quality control with cameras.</description>
+    <language>en</language>
+    <atom:link href="https://visioninspect.de/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Tue, 03 Nov 2026 08:00:00 GMT</lastBuildDate>
+    <item>
+      <title>From 16 good samples to a pass/fail limit: a walkthrough</title>
+      <link>https://visioninspect.de/blog/anomaly-detection-walkthrough-16-good-samples/</link>
+      <guid isPermaLink="true">https://visioninspect.de/blog/anomaly-detection-walkthrough-16-good-samples/</guid>
+      <pubDate>Tue, 03 Nov 2026 08:00:00 GMT</pubDate>
+      <description>A complete anomaly detection setup in VisionInspect, step by step: reference, 16 good samples, an automatic limit, and a crack flagged at 0.578.</description>
+      <category>anomaly detection</category>
+      <category>walkthrough</category>
+      <category>surface defects</category>
+      <enclosure url="https://visioninspect.de/img/showcase/04-crack-heatmap.webp" length="68706" type="image/webp"/>
+    </item>
+  </channel>
+</rss>

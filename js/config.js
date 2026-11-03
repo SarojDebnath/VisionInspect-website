@@ -21,7 +21,8 @@ window.SITE_CONFIG = {
   pages: {
     pcb: { en: "pcb-inspection/", de: "de/leiterplatten-pruefung/" },
     assembly: { en: "assembly-monitoring/", de: "de/montageueberwachung/" },
-    anomaly: { en: "visual-inspection-without-defect-images/", de: "de/sichtpruefung-ohne-fehlerbilder/" }
+    anomaly: { en: "visual-inspection-without-defect-images/", de: "de/sichtpruefung-ohne-fehlerbilder/" },
+    blog: { en: "blog/", de: "de/blog/" }
   },
 
   /*
