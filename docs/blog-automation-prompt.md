@@ -9,8 +9,9 @@ that writes the articles.
 ## Goal
 
 Build a small service that, once a day, turns real VisionInspect results into
-(1) a blog article on https://visioninspect.de and (2) a LinkedIn post that
-links to it. The purpose is to win B2B customers: quality and production
+(1) a blog article on https://visioninspect.de and (2) a ready-to-post
+LinkedIn text that links to it. The owner posts on LinkedIn by hand; the
+service never posts to LinkedIn itself. The purpose is to win B2B customers: quality and production
 engineers at small and mid-sized manufacturers, mainly in Germany, who look
 for AI visual inspection, PCB inspection or assembly monitoring.
 
@@ -63,11 +64,14 @@ Nothing is published without the owner's approval in Telegram.
    builds and deploys in about 2 minutes.
 7. **Check it is live**: poll the article URL until it returns 200 (max. 10
    min). If not, report the failing Action run in Telegram.
-8. **Post on LinkedIn** (after approval, after the page is live): the LinkedIn
-   text plus the article link. Report the post URL in Telegram.
+8. **Send the LinkedIn post to Telegram** (after the page is live), ready to
+   copy: one message with the final post text including the live article link
+   and hashtags, plus the image to attach as a separate photo (the cover or the
+   clearest result image). The owner posts it by hand. Do not use the LinkedIn
+   API.
 
-Secrets (GitHub token, Telegram bot token, Azure OpenAI key and endpoint,
-LinkedIn token) live in environment variables or a secret store of the
+Secrets (GitHub token, Telegram bot token, Azure OpenAI key and endpoint)
+live in environment variables or a secret store of the
 automation, never in the website repo, never in a post, never in logs.
 
 ## Writing rules (system prompt for the writer model)
@@ -153,5 +157,5 @@ Anbindung an die SPS per Modbus TCP; Datenhoheit: KI-Prüfung offline.
 content/blog/<english-slug>.md
 content/blog/<german-slug>.md
 img/blog/<english-slug>/*.webp   (the German post may reuse these paths)
-linkedin.txt                     (not committed; sent to Telegram, then posted)
+linkedin.txt                     (not committed; sent to Telegram for manual posting)
 ```
