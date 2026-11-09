@@ -31,7 +31,7 @@ Nothing is published without the owner's approval in Telegram.
   - Benchmark strips in `tinkering/datasets/_bench_images*/<dataset>/<class>/`:
     `NN_defect.jpg` (caught), `NN_missed.jpg` (missed), `NN_good.jpg`; each is
     three panels: good reference | inspected part | result with score.
-- **Website** (GitHub repo `SarojDebnath/VisionInspect-website`, branch
+- **Website** (the GitHub repository of the website, branch
   `main`): static site. Blog posts are Markdown files. The exact format is in
   `content/blog/README.md` in that repo: read it first and follow it exactly.
 
